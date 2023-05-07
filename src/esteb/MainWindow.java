@@ -1,9 +1,15 @@
 package esteb;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import javax.swing.JLabel;
+
 public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
+        colocarImagen(lblTutorialImage, "./src/images/tutorial-image.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -38,7 +44,7 @@ public class MainWindow extends javax.swing.JFrame {
         pnlTutorial = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        tutorialmage = new javax.swing.JLabel();
+        lblTutorialImage = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -265,9 +271,8 @@ public class MainWindow extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tutorialmage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tutorial-image.png")));
-        tutorialmage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(tutorialmage, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 493, 310));
+        lblTutorialImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(lblTutorialImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 493, 310));
 
         jLabel3.setText("acuerdo a sus preferencias. ¡Esperamos que disfrute de su estadía en la biblioteca!");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
@@ -343,6 +348,13 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void colocarImagen(JLabel lbl, String ruta) {
+        ImageIcon image = new ImageIcon(ruta);
+        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
+        lbl.setIcon(icono);
+        this.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -358,6 +370,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblTutorialImage;
     private javax.swing.JPanel pnlBuscar;
     private javax.swing.JPanel pnlNosotros;
     private javax.swing.JPanel pnlResults;
@@ -376,6 +389,5 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel resultTwoTitle;
     private javax.swing.JInternalFrame resultsFrame;
     private javax.swing.JScrollPane resultsScrollPane;
-    private javax.swing.JLabel tutorialmage;
     // End of variables declaration//GEN-END:variables
 }
