@@ -73,7 +73,6 @@ public class login extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
         jButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Ingresar");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 130, 40));
