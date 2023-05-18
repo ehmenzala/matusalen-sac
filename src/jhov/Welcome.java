@@ -117,8 +117,6 @@ public class Welcome extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 440, 360));
-
-        lblfondo.setText("jLabel1");
         jPanel1.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 640, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
