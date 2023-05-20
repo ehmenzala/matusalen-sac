@@ -22,9 +22,9 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cbxCriteria = new javax.swing.JComboBox<>();
+        btnOrder = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         resultsFrame = new javax.swing.JInternalFrame();
         resultsScrollPane = new javax.swing.JScrollPane();
         pnlResults = new javax.swing.JPanel();
@@ -64,17 +64,17 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel2.setText("Búsqueda");
         pnlBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Título", "Género", "Autor", "No. páginas" }));
-        pnlBuscar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 110, 30));
+        cbxCriteria.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        cbxCriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Título", "Género", "Autor", "No. páginas" }));
+        pnlBuscar.add(cbxCriteria, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 110, 30));
 
-        jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jButton1.setText("Ordenar");
-        pnlBuscar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 110, 30));
+        btnOrder.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnOrder.setText("Ordenar");
+        pnlBuscar.add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 110, 30));
 
-        jButton2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
-        jButton2.setText("Buscar");
-        pnlBuscar.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 30));
+        btnSearch.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnSearch.setText("Buscar");
+        pnlBuscar.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 30));
 
         resultsFrame.setVisible(true);
 
@@ -357,9 +357,9 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnOrder;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JComboBox<String> cbxCriteria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
