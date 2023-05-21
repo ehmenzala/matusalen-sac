@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 
+
 public class WelcomeAdm extends javax.swing.JFrame {
 
     
