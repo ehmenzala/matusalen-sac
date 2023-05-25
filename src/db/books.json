@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Libro Prueba 1",
+        "author": "Autor 1",
+        "genre": "Genero lit",
+        "numberOfPages": 127,
+        "publishDate": 2011,
+        "language": "Español Peruano",
+        "ISBN": "0-5111-3588-2",
+        "rating": 5,
+        "fragment": "Lorem ipsum dolor sit amet consectetur adipiscing elit. In vitae orci vitae neque egestas sollicitudin eget ac arcu. Aliquam a sagittis dui. Integer tristique aliquet tincidunt. Nulla facilisi. Pellentesque molestie commodo tincidunt. Integer vehicula odio sed ultricies convallis purus eros tempor tellus at ultricies purus urna ut ante. Etiam volutpat libero quis mollis finibus. Aenean pulvinar lacus quis scelerisque tristique. Donec sodales risus in tincidunt finibus ligula velit dignissim justo vitae congue orci mauris quis tortor."
+    },
+    {
+        "title": "Libro Prueba 2",
+        "author": "Autor 2",
+        "genre": "Genero 2",
+        "numberOfPages": 321,
+        "publishDate": 2005,
+        "language": "Español España",
+        "ISBN": "1-1156-3448-7",
+        "rating": 3,
+        "fragment": "Lorem ipsum dolor sit amet consectetur adipiscing elit. In vitae orci vitae neque egestas sollicitudin eget ac arcu. Aliquam a sagittis dui. Integer tristique aliquet tincidunt. Nulla facilisi. Pellentesque molestie commodo tincidunt. Integer vehicula odio sed ultricies convallis purus eros tempor tellus at ultricies purus urna ut ante. Etiam volutpat libero quis mollis finibus. Aenean pulvinar lacus quis scelerisque tristique. Donec sodales risus in tincidunt finibus ligula velit dignissim justo vitae congue orci mauris quis tortor."
+    }
+]
