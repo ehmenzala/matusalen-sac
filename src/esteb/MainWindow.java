@@ -4,12 +4,16 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
 
 public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
         colocarImagen(lblTutorialImage, "./src/images/tutorial-image.png");
+        createResults();
     }
 
     @SuppressWarnings("unchecked")
@@ -28,18 +32,6 @@ public class MainWindow extends javax.swing.JFrame {
         resultsFrame = new javax.swing.JInternalFrame();
         resultsScrollPane = new javax.swing.JScrollPane();
         pnlResults = new javax.swing.JPanel();
-        resultOnePanel = new javax.swing.JPanel();
-        resultOneBtn = new javax.swing.JButton();
-        resultOneTitle = new javax.swing.JLabel();
-        resultOneAuthor = new javax.swing.JLabel();
-        resultTwoPanel = new javax.swing.JPanel();
-        resultTwoBtn = new javax.swing.JButton();
-        resultTwoTitle = new javax.swing.JLabel();
-        resultTwoAuthor = new javax.swing.JLabel();
-        resultThreePanel = new javax.swing.JPanel();
-        resultThreeBtn = new javax.swing.JButton();
-        resultThreeTitle = new javax.swing.JLabel();
-        resultThreeAuthor = new javax.swing.JLabel();
         pnlNosotros = new javax.swing.JPanel();
         pnlTutorial = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -82,151 +74,15 @@ public class MainWindow extends javax.swing.JFrame {
 
         pnlResults.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        resultOnePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        resultOneBtn.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        resultOneBtn.setText("➡");
-
-        resultOneTitle.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        resultOneTitle.setText("Deep Work");
-
-        resultOneAuthor.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
-        resultOneAuthor.setText("Cal Newport");
-
-        javax.swing.GroupLayout resultOnePanelLayout = new javax.swing.GroupLayout(resultOnePanel);
-        resultOnePanel.setLayout(resultOnePanelLayout);
-        resultOnePanelLayout.setHorizontalGroup(
-            resultOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultOnePanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(resultOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(resultOneTitle)
-                    .addGroup(resultOnePanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(resultOneAuthor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 404, Short.MAX_VALUE)
-                .addComponent(resultOneBtn)
-                .addGap(17, 17, 17))
-        );
-        resultOnePanelLayout.setVerticalGroup(
-            resultOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(resultOnePanelLayout.createSequentialGroup()
-                .addGroup(resultOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(resultOnePanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(resultOneBtn))
-                    .addGroup(resultOnePanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(resultOneTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resultOneAuthor)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        resultTwoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        resultTwoBtn.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        resultTwoBtn.setText("➡");
-
-        resultTwoTitle.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        resultTwoTitle.setText("Deep Work");
-
-        resultTwoAuthor.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
-        resultTwoAuthor.setText("Cal Newport");
-
-        javax.swing.GroupLayout resultTwoPanelLayout = new javax.swing.GroupLayout(resultTwoPanel);
-        resultTwoPanel.setLayout(resultTwoPanelLayout);
-        resultTwoPanelLayout.setHorizontalGroup(
-            resultTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultTwoPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(resultTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(resultTwoTitle)
-                    .addGroup(resultTwoPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(resultTwoAuthor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(resultTwoBtn)
-                .addGap(17, 17, 17))
-        );
-        resultTwoPanelLayout.setVerticalGroup(
-            resultTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(resultTwoPanelLayout.createSequentialGroup()
-                .addGroup(resultTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(resultTwoPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(resultTwoBtn))
-                    .addGroup(resultTwoPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(resultTwoTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resultTwoAuthor)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        resultThreePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        resultThreeBtn.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        resultThreeBtn.setText("➡");
-
-        resultThreeTitle.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        resultThreeTitle.setText("Deep Work");
-
-        resultThreeAuthor.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
-        resultThreeAuthor.setText("Cal Newport");
-
-        javax.swing.GroupLayout resultThreePanelLayout = new javax.swing.GroupLayout(resultThreePanel);
-        resultThreePanel.setLayout(resultThreePanelLayout);
-        resultThreePanelLayout.setHorizontalGroup(
-            resultThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultThreePanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(resultThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(resultThreeTitle)
-                    .addGroup(resultThreePanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(resultThreeAuthor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(resultThreeBtn)
-                .addGap(17, 17, 17))
-        );
-        resultThreePanelLayout.setVerticalGroup(
-            resultThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(resultThreePanelLayout.createSequentialGroup()
-                .addGroup(resultThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(resultThreePanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(resultThreeBtn))
-                    .addGroup(resultThreePanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(resultThreeTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resultThreeAuthor)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout pnlResultsLayout = new javax.swing.GroupLayout(pnlResults);
         pnlResults.setLayout(pnlResultsLayout);
         pnlResultsLayout.setHorizontalGroup(
             pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlResultsLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(resultTwoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultThreePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultOnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
+            .addGap(0, 703, Short.MAX_VALUE)
         );
         pnlResultsLayout.setVerticalGroup(
             pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlResultsLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(resultOnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(resultTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(resultThreePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         resultsScrollPane.setViewportView(pnlResults);
@@ -317,7 +173,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -348,12 +204,167 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private void colocarImagen(JLabel lbl, String ruta) {
         ImageIcon image = new ImageIcon(ruta);
         Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
         lbl.setIcon(icono);
         this.repaint();
+    }
+
+    public void createResults() {
+
+        int numItems = 5;
+
+        /* EXTRAER - Este el el panel de resultados. Su Layout nos interesa conservarlo, no crearlo de nuevo en cada iteracion */
+        javax.swing.GroupLayout pnlResultsLayout = new javax.swing.GroupLayout(pnlResults);
+        pnlResults.setLayout(pnlResultsLayout);
+
+        GroupLayout.ParallelGroup hResultados = pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false);
+        GroupLayout.SequentialGroup vResultados = pnlResultsLayout.createSequentialGroup();
+
+        for (int i = 0; i < numItems; i++) {
+            JPanel result = new JPanel();
+            GroupLayout resultLayout = new javax.swing.GroupLayout(result);
+            result.setLayout(resultLayout);
+
+            JButton resultBtn = new javax.swing.JButton();
+            JLabel resultTitle = new javax.swing.JLabel();
+            JLabel resultAuthor = new javax.swing.JLabel();
+
+            // ------------------------------------------------------------------
+            /* ARMANDO NUESTRO RESULT ITEM */
+ /* Ponemos datos de la ventana. Luego los ordenaremos visualmente */
+            result.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+            resultBtn.setFont(new java.awt.Font("sansserif", 1, 24));
+            resultBtn.setText("➡");
+            resultTitle.setFont(new java.awt.Font("sansserif", 1, 18));
+            resultTitle.setText("Deep Workeado");
+            resultAuthor.setFont(new java.awt.Font("sansserif", 2, 14));
+            resultAuthor.setText("Cal Newport");
+
+            // Coloacndo los elementos dentro de cada RESULTADO ITEM
+            if (i == 0) {
+                resultLayout.setHorizontalGroup(
+                        resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(resultTitle)
+                                                .addComponent(resultAuthor))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
+                                        .addComponent(resultBtn)
+                                        .addGap(17, 17, 17))
+                );
+            } else {
+                resultLayout.setHorizontalGroup(
+                        resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(resultTitle)
+                                                .addComponent(resultAuthor))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(resultBtn)
+                                        .addGap(17, 17, 17))
+                );
+            }
+
+            resultLayout.setVerticalGroup(
+                    resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(resultLayout.createSequentialGroup()
+                                    .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(resultLayout.createSequentialGroup()
+                                                    .addGap(30, 30, 30)
+                                                    .addComponent(resultBtn))
+                                            .addGroup(resultLayout.createSequentialGroup()
+                                                    .addGap(20, 20, 20)
+                                                    .addComponent(resultTitle)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(resultAuthor)))
+                                    .addContainerGap(21, Short.MAX_VALUE))
+            );
+
+            // ------------------------------------------------------------------
+            /* AGREGANDO ELEMENTSO A NUESTRO CONTENEDOR DE ITEMS RESULTADO */
+            // A este hay que meterle los
+            // .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            // .addComponent(result1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            // .addComponent(result2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            //hResultados = pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false);
+
+            /*
+            .addGap(16, 16, 16)
+            .addComponent(resultOnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+            .addGap(16, 16, 16)
+            .addComponent(resultTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            
+            .addGap(16, 16, 16)
+            .addComponent(resultTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            
+            ...
+
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(resultThreePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(110, Short.MAX_VALUE))
+             */
+            //vResultados = pnlResultsLayout.createSequentialGroup();
+            if (i < numItems) {
+                if ( i == 0) {
+                    vResultados.addGap(16, 16, 16)
+                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(16, Short.MAX_VALUE);
+                } else {
+                    vResultados.addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(16, Short.MAX_VALUE);
+                }
+                hResultados.addComponent(result, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE);
+                
+
+            } else {
+                hResultados.addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE);
+                vResultados.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(110, Short.MAX_VALUE);
+            }
+
+        }
+
+        pnlResultsLayout.setHorizontalGroup(
+                pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlResultsLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(hResultados)
+                                .addContainerGap(109, Short.MAX_VALUE))
+        );
+
+        pnlResultsLayout.setVerticalGroup(
+                pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(vResultados)
+        );
+
+        /* *********************** */
+ /* Metiendo los resultados */
+ /* *********************** */
+//        resultsScrollPane.setViewportView(pnlResults);
+//
+//        javax.swing.GroupLayout resultsFrameLayout = new javax.swing.GroupLayout(resultsFrame.getContentPane());
+//        resultsFrame.getContentPane().setLayout(resultsFrameLayout);
+//        resultsFrameLayout.setHorizontalGroup(
+//                resultsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//                        .addGroup(resultsFrameLayout.createSequentialGroup()
+//                                .addContainerGap()
+//                                .addComponent(resultsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
+//        );
+//        resultsFrameLayout.setVerticalGroup(
+//                resultsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//                        .addGroup(resultsFrameLayout.createSequentialGroup()
+//                                .addGap(19, 19, 19)
+//                                .addComponent(resultsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                                .addContainerGap(19, Short.MAX_VALUE))
+//        );
+        pack();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -375,18 +386,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel pnlNosotros;
     private javax.swing.JPanel pnlResults;
     private javax.swing.JPanel pnlTutorial;
-    private javax.swing.JLabel resultOneAuthor;
-    private javax.swing.JButton resultOneBtn;
-    private javax.swing.JPanel resultOnePanel;
-    private javax.swing.JLabel resultOneTitle;
-    private javax.swing.JLabel resultThreeAuthor;
-    private javax.swing.JButton resultThreeBtn;
-    private javax.swing.JPanel resultThreePanel;
-    private javax.swing.JLabel resultThreeTitle;
-    private javax.swing.JLabel resultTwoAuthor;
-    private javax.swing.JButton resultTwoBtn;
-    private javax.swing.JPanel resultTwoPanel;
-    private javax.swing.JLabel resultTwoTitle;
     private javax.swing.JInternalFrame resultsFrame;
     private javax.swing.JScrollPane resultsScrollPane;
     // End of variables declaration//GEN-END:variables
