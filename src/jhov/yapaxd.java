@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import MetodoGeneral.*;
 
 /**
  *
@@ -21,7 +22,7 @@ public class yapaxd extends javax.swing.JFrame {
     public yapaxd() {
         initComponents();
 //        colocarImagen(lblfondo, "./src/images/Biblioteca.jpg");
-        colocarImagen(lblLIBRO, "./src/images/libro.png");
+        MetodoGeneral.colocarImagen(lblLIBRO, "./src/images/libro.png");
     }
 
     /**
@@ -128,13 +129,6 @@ public class yapaxd extends javax.swing.JFrame {
                 new yapaxd().setVisible(true);
             }
         });
-    }
-    
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

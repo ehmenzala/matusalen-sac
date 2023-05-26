@@ -9,6 +9,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import MetodoGeneral.*;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Welcome extends javax.swing.JFrame {
      */
     public Welcome() {
         initComponents();
-        colocarImagen(lblfondo, "./src/images/bibliofondo.jpg");
+        MetodoGeneral.colocarImagen(lblfondo, "./src/images/bibliofondo.jpg");
     }
 
     /**
@@ -170,13 +171,6 @@ public class Welcome extends javax.swing.JFrame {
                 new Welcome().setVisible(true);
             }
         });
-    }
-
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
     }
 
 

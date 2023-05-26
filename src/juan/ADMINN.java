@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import MetodoGeneral.*;
 
 /**
  *
@@ -20,14 +21,14 @@ public class ADMINN extends javax.swing.JFrame {
      */
     public ADMINN() {
         initComponents();
-        colocarImagen(lblModificar, "./src/images/modificar.png");
-        colocarImagen(lblAgregar, "./src/images/agregar.png");
-        colocarImagen(lblEliminar, "./src/images/eliminar.png");
-        colocarImagen(lblLimpiar, "./src/images/limpiar.png");
-        colocarImagen(lblFondo, "./src/images/bibliofondo.jpg");
-        colocarImagen(lblFondo2, "./src/images/bibliofondo.jpg");
-        colocarImagen(lblBuscar, "./src/images/buscar.png");
-        colocarImagen(lblLOGO, "./src/images/amarillo.png");
+        MetodoGeneral.colocarImagen(lblModificar, "./src/images/modificar.png");
+        MetodoGeneral.colocarImagen(lblAgregar, "./src/images/agregar.png");
+        MetodoGeneral.colocarImagen(lblEliminar, "./src/images/eliminar.png");
+        MetodoGeneral.colocarImagen(lblLimpiar, "./src/images/limpiar.png");
+        MetodoGeneral.colocarImagen(lblFondo, "./src/images/bibliofondo.jpg");
+        MetodoGeneral.colocarImagen(lblFondo2, "./src/images/bibliofondo.jpg");
+        MetodoGeneral.colocarImagen(lblBuscar, "./src/images/buscar.png");
+        MetodoGeneral.colocarImagen(lblLOGO, "./src/images/amarillo.png");
     }
 
     /**
@@ -256,13 +257,6 @@ public class ADMINN extends javax.swing.JFrame {
                 new ADMINN().setVisible(true);
             }
         });
-    }
-    
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import MetodoGeneral.*;
 
 /**
  *
@@ -20,11 +21,12 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-        colocarImagen(lblBiblio, "./src/images/biblio.jpg");
-        colocarImagen(lblcorreo,"./src/images/correo.png" );
-        colocarImagen(lblpassword,"./src/images/contraseña.png");
-        colocarImagen(lblnegro, "./src/images/descargar.jpeg");
-        colocarImagen(lblmatusalen, "./src/images/amarillo.png");
+        
+        MetodoGeneral.colocarImagen(lblBiblio, "./src/images/biblio.jpg");
+        MetodoGeneral.colocarImagen(lblcorreo,"./src/images/correo.png" );
+        MetodoGeneral.colocarImagen(lblpassword,"./src/images/contraseña.png");
+        MetodoGeneral.colocarImagen(lblnegro, "./src/images/descargar.jpeg");
+        MetodoGeneral.colocarImagen(lblmatusalen, "./src/images/amarillo.png");
     }
 
     /**
@@ -160,13 +162,6 @@ public class login extends javax.swing.JFrame {
                 new login().setVisible(true);
             }
         });
-    }
-    
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
