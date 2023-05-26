@@ -189,9 +189,6 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JScrollPane" name="resultsScrollPane">
-                      <Properties>
-                        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
-                      </Properties>
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>

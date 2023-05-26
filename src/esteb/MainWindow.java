@@ -3,17 +3,19 @@ package esteb;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.GroupLayout;
-import javax.swing.JButton;
+import javax.swing.GroupLayout.ParallelGroup;
+import javax.swing.GroupLayout.SequentialGroup;
 
 public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
         colocarImagen(lblTutorialImage, "./src/images/tutorial-image.png");
-        createResults();
+        createResultItems();
     }
 
     @SuppressWarnings("unchecked")
@@ -69,8 +71,6 @@ public class MainWindow extends javax.swing.JFrame {
         pnlBuscar.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 30));
 
         resultsFrame.setVisible(true);
-
-        resultsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         pnlResults.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -212,127 +212,58 @@ public class MainWindow extends javax.swing.JFrame {
         this.repaint();
     }
 
-    public void createResults() {
-
-        int numItems = 5;
-
-        /* EXTRAER - Este el el panel de resultados. Su Layout nos interesa conservarlo, no crearlo de nuevo en cada iteracion */
-        javax.swing.GroupLayout pnlResultsLayout = new javax.swing.GroupLayout(pnlResults);
+    public void createResultItems() {
+        GroupLayout pnlResultsLayout = new GroupLayout(pnlResults);
+        ParallelGroup hResultados = pnlResultsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false);
+        SequentialGroup vResultados = pnlResultsLayout.createSequentialGroup();
         pnlResults.setLayout(pnlResultsLayout);
-
-        GroupLayout.ParallelGroup hResultados = pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false);
-        GroupLayout.SequentialGroup vResultados = pnlResultsLayout.createSequentialGroup();
+        
+        ArrayList<Book> books = new ArrayList<>(Arrays.asList(
+                new Book(1, "The One Thing", "Gary Keller", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(2, "Cien años de soledad", "No sé quien", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(3, "Poder sin Límites", "Anthony Robbins", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(4, "Amor en tiempos de cólera", "Gabrial García Márquez", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(5, "Sálvense quien pueda", "Andres Oppenheimer", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(6, "Originales", "Adam Grant", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(7, "El Espía del Inca", "Dummet", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento"),
+                new Book(8, "Deep Work", "Cal Newport", "Self-development", 271, 2011, "English", "1-8888-8888-8", 5, "Este es un fragmento")
+        ));
+        
+        int numItems = books.size();
 
         for (int i = 0; i < numItems; i++) {
-            JPanel result = new JPanel();
-            GroupLayout resultLayout = new javax.swing.GroupLayout(result);
-            result.setLayout(resultLayout);
-
-            JButton resultBtn = new javax.swing.JButton();
-            JLabel resultTitle = new javax.swing.JLabel();
-            JLabel resultAuthor = new javax.swing.JLabel();
-
-            // ------------------------------------------------------------------
-            /* ARMANDO NUESTRO RESULT ITEM */
- /* Ponemos datos de la ventana. Luego los ordenaremos visualmente */
-            result.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-            resultBtn.setFont(new java.awt.Font("sansserif", 1, 24));
-            resultBtn.setText("➡");
-            resultTitle.setFont(new java.awt.Font("sansserif", 1, 18));
-            resultTitle.setText("Deep Workeado");
-            resultAuthor.setFont(new java.awt.Font("sansserif", 2, 14));
-            resultAuthor.setText("Cal Newport");
-
-            // Coloacndo los elementos dentro de cada RESULTADO ITEM
+            Book book = books.get(i);
+            BookResultPanel resultItem;
+            
             if (i == 0) {
-                resultLayout.setHorizontalGroup(
-                        resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(resultTitle)
-                                                .addComponent(resultAuthor))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 375, Short.MAX_VALUE)
-                                        .addComponent(resultBtn)
-                                        .addGap(17, 17, 17))
-                );
+                resultItem = new BookResultPanel(book, BookResultPanel.PanelType.LONG);
             } else {
-                resultLayout.setHorizontalGroup(
-                        resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(resultTitle)
-                                                .addComponent(resultAuthor))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(resultBtn)
-                                        .addGap(17, 17, 17))
-                );
+                resultItem = new BookResultPanel(book, BookResultPanel.PanelType.DEFAULT);
             }
 
-            resultLayout.setVerticalGroup(
-                    resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(resultLayout.createSequentialGroup()
-                                    .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(resultLayout.createSequentialGroup()
-                                                    .addGap(30, 30, 30)
-                                                    .addComponent(resultBtn))
-                                            .addGroup(resultLayout.createSequentialGroup()
-                                                    .addGap(20, 20, 20)
-                                                    .addComponent(resultTitle)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(resultAuthor)))
-                                    .addContainerGap(21, Short.MAX_VALUE))
-            );
-
-            // ------------------------------------------------------------------
-            /* AGREGANDO ELEMENTSO A NUESTRO CONTENEDOR DE ITEMS RESULTADO */
-            // A este hay que meterle los
-            // .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            // .addComponent(result1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            // .addComponent(result2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            //hResultados = pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false);
-
-            /*
-            .addGap(16, 16, 16)
-            .addComponent(resultOnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-
-            .addGap(16, 16, 16)
-            .addComponent(resultTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            
-            .addGap(16, 16, 16)
-            .addComponent(resultTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            
-            ...
-
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(resultThreePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(110, Short.MAX_VALUE))
-             */
-            //vResultados = pnlResultsLayout.createSequentialGroup();
             if (i < numItems) {
                 if ( i == 0) {
                     vResultados.addGap(16, 16, 16)
-                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resultItem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(16, Short.MAX_VALUE);
                 } else {
-                    vResultados.addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    vResultados.addComponent(resultItem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(16, Short.MAX_VALUE);
                 }
-                hResultados.addComponent(result, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE);
+                hResultados.addComponent(resultItem, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE);
                 
 
             } else {
-                hResultados.addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE);
+                hResultados.addComponent(resultItem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE);
                 vResultados.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resultItem, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(110, Short.MAX_VALUE);
             }
 
         }
 
         pnlResultsLayout.setHorizontalGroup(
-                pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                pnlResultsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(pnlResultsLayout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addGroup(hResultados)
@@ -340,31 +271,9 @@ public class MainWindow extends javax.swing.JFrame {
         );
 
         pnlResultsLayout.setVerticalGroup(
-                pnlResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                pnlResultsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(vResultados)
         );
-
-        /* *********************** */
- /* Metiendo los resultados */
- /* *********************** */
-//        resultsScrollPane.setViewportView(pnlResults);
-//
-//        javax.swing.GroupLayout resultsFrameLayout = new javax.swing.GroupLayout(resultsFrame.getContentPane());
-//        resultsFrame.getContentPane().setLayout(resultsFrameLayout);
-//        resultsFrameLayout.setHorizontalGroup(
-//                resultsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//                        .addGroup(resultsFrameLayout.createSequentialGroup()
-//                                .addContainerGap()
-//                                .addComponent(resultsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
-//        );
-//        resultsFrameLayout.setVerticalGroup(
-//                resultsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-//                        .addGroup(resultsFrameLayout.createSequentialGroup()
-//                                .addGap(19, 19, 19)
-//                                .addComponent(resultsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-//                                .addContainerGap(19, Short.MAX_VALUE))
-//        );
-        pack();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
