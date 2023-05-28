@@ -1,9 +1,33 @@
-package joaq;
 
+import esteb.Book;
+import esteb.BookFetcher;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {       
+    public static void main(String[] args) {
+        
+    }
+    
+    public static void readFileFromBookFetcher() {
+        BookFetcher bf = new BookFetcher();
+        ArrayList<Book> totalBooks = bf.readAllBooks();
+        for (Book book : totalBooks) {
+            System.out.println("# Book: " + book.getTitle());
+            System.out.println("> ID: " + book.getId());
+            System.out.println("> Author: " + book.getAuthor());
+            System.out.println("> Genre: " + book.getGenre());
+            System.out.println("> No. Pages: " + book.getNumberOfPages());
+            System.out.println("> Published day: " + book.getPublishedDate());
+            System.out.println("> Language: " + book.getLanguage());
+            System.out.println("> ISBN: " + book.getIsbn());
+            System.out.println("> Rating: " + book.getRating());
+            System.out.println("> Fragment: " + book.getFragment());
+            System.out.println();
+        }
+    }
+    
+    public static void myLittlePonny() {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("¡Bienvenido(a) a My Little Pony!");
@@ -41,5 +65,5 @@ public class Main {
         
         // Cerrar el escáner
         scanner.close();
-    }  
+    }
 }
