@@ -58,6 +58,17 @@ public class BookShelf {
         return searchResults;
         
     }
+    
+    public Book searchById(String id) {
+        int searchId = Integer.parseInt(id);
+        for (Book book: books) {
+            if (book.getId() == searchId) {
+                return book;
+            }
+        }
+        return null;
+    }
+    
     private Book[] searchByTitle(String searchTerm) {
         ArrayList<Book> searchResults = new ArrayList<>();
         for (Book book : books) {
@@ -97,15 +108,5 @@ public class BookShelf {
             }
         }
         return (Book[]) searchResults.toArray();
-    }
-    
-    private Book searchById(String id) {
-        int searchId = Integer.parseInt(id);
-        for (Book book: books) {
-            if (book.getId() == searchId) {
-                return book;
-            }
-        }
-        return null;
     }
 }
