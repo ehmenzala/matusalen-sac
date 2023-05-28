@@ -1,4 +1,3 @@
-
 package joaq;
 
 import java.awt.Image;
@@ -6,10 +5,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-
-
 public class WelcomeAdm extends javax.swing.JFrame {
-
     
     public WelcomeAdm() {
         initComponents();
@@ -17,7 +13,6 @@ public class WelcomeAdm extends javax.swing.JFrame {
         jLabel3.setText("Bienvenido, " + nombre);
         colocarImagen(lblLibrosImg, "./src/images/old-books.jpg");
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -75,7 +70,6 @@ public class WelcomeAdm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -107,6 +101,7 @@ public class WelcomeAdm extends javax.swing.JFrame {
             }
         });
     }
+    
     private void colocarImagen(JLabel lbl, String ruta) {
         ImageIcon image = new ImageIcon(ruta);
         Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
