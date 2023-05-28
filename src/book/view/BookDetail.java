@@ -1,5 +1,5 @@
 
-package book;
+package book.view;
 //librerias
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -8,7 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import book.Book;
+import book.model.Book;
+import book.model.Book;
 
 
 public class BookDetail extends javax.swing.JFrame {

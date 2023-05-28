@@ -1,4 +1,4 @@
-package book;
+package book.view;
 
 import utilities.MetodoGeneral;
 

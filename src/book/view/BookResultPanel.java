@@ -1,5 +1,6 @@
-package book;
+package book.view;
 
+import book.model.Book;
 import java.awt.Font;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;

@@ -1,4 +1,4 @@
-package book;
+package book.model;
 
 import java.util.ArrayList;
 

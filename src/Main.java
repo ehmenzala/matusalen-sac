@@ -1,6 +1,6 @@
 
-import book.Book;
-import book.BookFetcher;
+import book.model.Book;
+import book.model.BookFetcher;
 import java.util.ArrayList;
 import java.util.Scanner;
 

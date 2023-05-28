@@ -1,4 +1,4 @@
-package book;
+package book.model;
 
 public class Book {
     private int id;
