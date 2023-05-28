@@ -8,11 +8,11 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository {
+public class BookFetcher {
     
     private final String FILE_PATH = "./src/db/books.psv";
 
-    public BookRepository() {
+    public BookFetcher() {
     }
 
     public void createBook(Book book) {
