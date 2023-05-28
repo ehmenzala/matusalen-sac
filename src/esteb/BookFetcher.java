@@ -69,7 +69,7 @@ public class BookFetcher {
     }
 
     /**
-     * Sobreescribe el contenido del archivo <code>books.psv</code> con la nueve lista de libros
+     * Sobreescribe el contenido del archivo <code>books.psv</code> con la nueva lista de libros
      * que se pase por parámetro.
      * <p>
      * Se suele llamar siempre que se manipulen los datos del archivo mencionado anteriormente para
