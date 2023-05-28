@@ -14,15 +14,7 @@ public class BookQuery {
         return searchType;
     }
 
-    public void setSearchType(String searchType) {
-        this.searchType = searchType;
-    }
-
     public String getSearchTerm() {
         return searchTerm;
-    }
-
-    public void setSearchTerm(String searchTerm) {
-        this.searchTerm = searchTerm;
     }
 }
