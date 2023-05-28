@@ -1,5 +1,5 @@
 
-package MetodoGeneral;
+package utilities;
 
 import java.awt.Image;
 import javax.swing.Icon;

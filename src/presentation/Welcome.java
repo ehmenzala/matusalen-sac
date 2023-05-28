@@ -1,6 +1,6 @@
-package jhov;
+package presentation;
 
-import MetodoGeneral.*;
+import utilities.MetodoGeneral;
 
 public class Welcome extends javax.swing.JFrame {
 

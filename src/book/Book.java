@@ -1,24 +1,36 @@
-package model;
+package book;
 
 public class Book {
+    private int id;
     private String title;
     private String author;
-    private String gender;
+    private String genre;
+    private int numberOfPages;
+    private int publishedDate;
     private String language;
     private String isbn;
-    private int publicDate;
     private int rating; // From 1 to 5
     private String fragment;
 
-    public Book(String title, String author, String gender, String language, String isbn, int publicDate, int rating, String fragment) {
+    public Book(int id, String title, String author, String genre, int numberOfPages, int publishDate, String language, String isbn, int rating, String fragment) {
+        this.id = id;
         this.title = title;
         this.author = author;
-        this.gender = gender;
+        this.genre = genre;
+        this.numberOfPages = numberOfPages;
+        this.publishedDate = publishDate;
         this.language = language;
         this.isbn = isbn;
-        this.publicDate = publicDate;
         this.rating = rating;
         this.fragment = fragment;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -37,12 +49,28 @@ public class Book {
         this.author = author;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    public int getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(int publishedDate) {
+        this.publishedDate = publishedDate;
     }
 
     public String getLanguage() {
@@ -61,14 +89,6 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public int getPublicDate() {
-        return publicDate;
-    }
-
-    public void setPublicDate(int publicDate) {
-        this.publicDate = publicDate;
-    }
-
     public int getRating() {
         return rating;
     }
@@ -84,7 +104,6 @@ public class Book {
     public void setFragment(String fragment) {
         this.fragment = fragment;
     }
-    
     
     
 }

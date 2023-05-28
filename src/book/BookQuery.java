@@ -1,4 +1,4 @@
-package esteb;
+package book;
 
 public class BookQuery {
     

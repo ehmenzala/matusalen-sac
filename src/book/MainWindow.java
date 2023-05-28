@@ -1,5 +1,7 @@
-package esteb;
+package book;
 
+import book.Book;
+import book.BookResultPanel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Image;

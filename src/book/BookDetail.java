@@ -1,5 +1,5 @@
 
-package joaq;
+package book;
 //librerias
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -8,13 +8,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import model.Book;
+import book.Book;
 
 
-
-public class DetalleLibro extends javax.swing.JFrame {
+public class BookDetail extends javax.swing.JFrame {
     
-    public DetalleLibro() {
+    public BookDetail() {
         initComponents();
         colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         colocarImagen(lblStar, "./src/images/estrella-amar.png");
@@ -23,16 +22,16 @@ public class DetalleLibro extends javax.swing.JFrame {
         textArea.setLineWrap(true); // para ajustar el ancho de línea automáticamente 
         textArea.setWrapStyleWord(true);//pa que no divida las  palabras a lo loco
         //como se veria ejemplo supongo xdxd
-        Book Libro1 = new Book("Cien años de soledad", "Gabriel García Márquez", "Realismo mágico",
-                        "Español", "9780307474728", 1967, 5,
+        Book Libro1 = new Book(1, "Cien años de soledad", "Gabriel García Márquez", "Realismo mágico",
+                        271, 1967, "Español", "9780307474728", 5,
                         "La abuela le había explicado que el mundo estaba cada día más cargado de peso, tanto que ya era difícil sostenerlo sobre las rodillas. La gente se desesperaba por no poder resistir su peso, y se hundía en la tierra hasta la cintura. Por eso había poca comunicación entre los pueblos: cuando alguien quería ir a otra parte tenía que llevarse consigo una buena cantidad del mundo para contrapesar el peso local. —Pero si todo el mundo hace lo mismo —objetó Úrsula. —Por eso es que hay tanta incomprensión —respondió la abuela.\" Este diálogo refleja el humor absurdo e imaginativo característico del estilo literario mágico-realista del autor colombiano. Además, muestra cómo incluso temas profundos como la incomunicación pueden ser tratados con una dosis saludable de humor surrealista en su obra maestra \"Cien años de soledad");
         //metiendolos en los label
         lblCtitulo.setText(Libro1.getTitle());
         lblCautor.setText(Libro1.getAuthor());
-        lblCgenero.setText(Libro1.getGender());
+        lblCgenero.setText(Libro1.getGenre());
         lblCidioma.setText(Libro1.getLanguage());
         lblCisbn.setText(Libro1.getIsbn());
-        lblCaño.setText(String.valueOf(Libro1.getPublicDate()));
+        lblCaño.setText(String.valueOf(Libro1.getPublishedDate()));
         lblCrating.setText(String.valueOf(Libro1.getRating()));
         //el fragmento
         textArea.setText(Libro1.getFragment());
@@ -174,20 +173,21 @@ public class DetalleLibro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DetalleLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DetalleLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DetalleLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DetalleLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DetalleLibro().setVisible(true);
+                new BookDetail().setVisible(true);
             }
         });
     }
