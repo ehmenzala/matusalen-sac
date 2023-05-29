@@ -1,4 +1,7 @@
 
+import admin.model.Admin;
+import admin.model.AdminSession;
+import admin.model.AdminSessionFetcher;
 import book.model.Book;
 import book.model.BookFetcher;
 import java.util.ArrayList;
@@ -7,7 +10,8 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[] args) {
-        
+        BookFetcher bf = new BookFetcher();
+        bf.createBook(new Book(5, "tutt", "asdasdsa", "gendakdas", 177, 2020, "esasdasd,", "165-645-564", 5, "fraduauwdwd"));   
     }
     
     public static void readFileFromBookFetcher() {
@@ -26,6 +30,19 @@ public class Main {
             System.out.println("> Fragment: " + book.getFragment());
             System.out.println();
         }
+    }
+    
+    public static void AdminSessionFetcherTest() {
+        AdminSessionFetcher asf = new AdminSessionFetcher();
+        AdminSession testSession = new AdminSession(new Admin("Esteban"), "correo@correo.com", "micontra");
+        //asf.createSession(testSession);
+        //System.out.println("# Test session");
+        //System.out.println("Name: " + testSession.getAdmin().getName());
+        //System.out.println("Correo: " + testSession.getEmail());
+        //System.out.println("Pass: " + testSession.getPassword());
+        
+        String message = asf.exists(testSession) ? "Sí existe" : "No existe";
+        System.out.println(message);
     }
     
     public static void myLittlePonny() {
