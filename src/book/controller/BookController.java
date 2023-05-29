@@ -1,5 +1,5 @@
 package book.controller;
 
-public class AdminController {
+public class BookController {
     
 }
