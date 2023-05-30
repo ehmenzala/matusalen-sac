@@ -27,7 +27,7 @@ public class MainWindow extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnlBuscar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtSearchBox = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         cbxCriteria = new javax.swing.JComboBox<>();
         btnOrder = new javax.swing.JButton();
@@ -53,7 +53,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel1.setText("por");
         pnlBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
-        pnlBuscar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 120, 30));
+        pnlBuscar.add(txtSearchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Búsqueda");
@@ -290,7 +290,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblTutorialImage;
     private javax.swing.JPanel pnlBuscar;
     private javax.swing.JPanel pnlNosotros;
@@ -298,5 +297,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel pnlTutorial;
     private javax.swing.JInternalFrame resultsFrame;
     private javax.swing.JScrollPane resultsScrollPane;
+    private javax.swing.JTextField txtSearchBox;
     // End of variables declaration//GEN-END:variables
 }
