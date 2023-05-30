@@ -1,43 +1,36 @@
 
 package book.view;
 //librerias
-import java.awt.BorderLayout;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import book.model.Book;
 import book.model.Book;
 
 
 public class BookDetail extends javax.swing.JFrame {
     
-    public BookDetail() {
+    public BookDetail(Book book) {
         initComponents();
         colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         colocarImagen(lblStar, "./src/images/estrella-amar.png");
-        //cosas del textArea
-        textArea.setEditable(false); //para evitar la edición del texto
-        textArea.setLineWrap(true); // para ajustar el ancho de línea automáticamente 
-        textArea.setWrapStyleWord(true);//pa que no divida las  palabras a lo loco
-        //como se veria ejemplo supongo xdxd
-        Book Libro1 = new Book(1, "Cien años de soledad", "Gabriel García Márquez", "Realismo mágico",
-                        271, 1967, "Español", "9780307474728", 5,
-                        "La abuela le había explicado que el mundo estaba cada día más cargado de peso, tanto que ya era difícil sostenerlo sobre las rodillas. La gente se desesperaba por no poder resistir su peso, y se hundía en la tierra hasta la cintura. Por eso había poca comunicación entre los pueblos: cuando alguien quería ir a otra parte tenía que llevarse consigo una buena cantidad del mundo para contrapesar el peso local. —Pero si todo el mundo hace lo mismo —objetó Úrsula. —Por eso es que hay tanta incomprensión —respondió la abuela.\" Este diálogo refleja el humor absurdo e imaginativo característico del estilo literario mágico-realista del autor colombiano. Además, muestra cómo incluso temas profundos como la incomunicación pueden ser tratados con una dosis saludable de humor surrealista en su obra maestra \"Cien años de soledad");
-        //metiendolos en los label
-        lblCtitulo.setText(Libro1.getTitle());
-        lblCautor.setText(Libro1.getAuthor());
-        lblCgenero.setText(Libro1.getGenre());
-        lblCidioma.setText(Libro1.getLanguage());
-        lblCisbn.setText(Libro1.getIsbn());
-        lblCaño.setText(String.valueOf(Libro1.getPublishedDate()));
-        lblCrating.setText(String.valueOf(Libro1.getRating()));
-        //el fragmento
-        textArea.setText(Libro1.getFragment());
         
-                
+        // Cosas del textArea
+        textArea.setEditable(false); //para evitar la edición del texto
+        textArea.setLineWrap(true); // para ajustar el ancho de línea automáticamente
+        textArea.setWrapStyleWord(true);//para que no dividan las palabras a lo loco
+        
+        // Metiendo la información en los label
+        // El libro ahora se pasa por parámetro en el constructor (book)
+        lblCtitulo.setText(book.getTitle());
+        lblCautor.setText(book.getAuthor());
+        lblCgenero.setText(book.getGenre());
+        lblCidioma.setText(book.getLanguage());
+        lblCisbn.setText(book.getIsbn());
+        lblCanio.setText(String.valueOf(book.getPublishedDate()));
+        lblCrating.setText(String.valueOf(book.getRating()));
+        //el fragmento
+        textArea.setText(book.getFragment());
     }
     
 
@@ -50,12 +43,12 @@ public class BookDetail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        lblGenero = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        lblAño = new javax.swing.JLabel();
-        lblISBN = new javax.swing.JLabel();
-        lblIdioma = new javax.swing.JLabel();
         lblAutor = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        lblIdioma = new javax.swing.JLabel();
+        lblISBN = new javax.swing.JLabel();
+        lblAnio = new javax.swing.JLabel();
         lblRating = new javax.swing.JLabel();
         lblCrating = new javax.swing.JLabel();
         lblCtitulo = new javax.swing.JLabel();
@@ -63,7 +56,7 @@ public class BookDetail extends javax.swing.JFrame {
         lblCgenero = new javax.swing.JLabel();
         lblCidioma = new javax.swing.JLabel();
         lblCisbn = new javax.swing.JLabel();
-        lblCaño = new javax.swing.JLabel();
+        lblCanio = new javax.swing.JLabel();
         lblStar = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
@@ -89,35 +82,35 @@ public class BookDetail extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblGenero.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblGenero.setForeground(new java.awt.Color(255, 255, 0));
-        lblGenero.setText("GÉNERO :");
-        jPanel3.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 70, 20));
-
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 0));
         lblTitulo.setText("TÍTULO :");
         jPanel3.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 70, 20));
 
-        lblAño.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblAño.setForeground(new java.awt.Color(255, 255, 0));
-        lblAño.setText("AÑO:");
-        jPanel3.add(lblAño, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 40, 20));
+        lblAutor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblAutor.setForeground(new java.awt.Color(255, 255, 0));
+        lblAutor.setText("AUTOR :");
+        jPanel3.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
 
-        lblISBN.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblISBN.setForeground(new java.awt.Color(255, 255, 0));
-        lblISBN.setText("ISBN :");
-        jPanel3.add(lblISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
+        lblGenero.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblGenero.setForeground(new java.awt.Color(255, 255, 0));
+        lblGenero.setText("GÉNERO :");
+        jPanel3.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 70, 20));
 
         lblIdioma.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblIdioma.setForeground(new java.awt.Color(255, 255, 0));
         lblIdioma.setText("IDIOMA :");
         jPanel3.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 70, 20));
 
-        lblAutor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblAutor.setForeground(new java.awt.Color(255, 255, 0));
-        lblAutor.setText("AUTOR :");
-        jPanel3.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
+        lblISBN.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblISBN.setForeground(new java.awt.Color(255, 255, 0));
+        lblISBN.setText("ISBN :");
+        jPanel3.add(lblISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
+
+        lblAnio.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblAnio.setForeground(new java.awt.Color(255, 255, 0));
+        lblAnio.setText("AÑO:");
+        jPanel3.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 40, 20));
 
         lblRating.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblRating.setForeground(new java.awt.Color(255, 255, 0));
@@ -148,9 +141,9 @@ public class BookDetail extends javax.swing.JFrame {
         lblCisbn.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(lblCisbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 110, 20));
 
-        lblCaño.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        lblCaño.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 180, 20));
+        lblCanio.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCanio.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(lblCanio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 180, 20));
         jPanel3.add(lblStar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 20, 20));
         jPanel3.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
 
@@ -159,39 +152,6 @@ public class BookDetail extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-  
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookDetail().setVisible(true);
-            }
-        });
-    }
     private void colocarImagen(JLabel lbl, String ruta) {
         ImageIcon image = new ImageIcon(ruta);
         Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
@@ -203,10 +163,10 @@ public class BookDetail extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblAutor;
-    private javax.swing.JLabel lblAño;
+    private javax.swing.JLabel lblCanio;
     private javax.swing.JLabel lblCautor;
-    private javax.swing.JLabel lblCaño;
     private javax.swing.JLabel lblCgenero;
     private javax.swing.JLabel lblCidioma;
     private javax.swing.JLabel lblCisbn;
