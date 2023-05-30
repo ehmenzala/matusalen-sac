@@ -60,7 +60,7 @@ public class BookDetail extends javax.swing.JFrame {
         lblStar = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Libros Matusalen");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
