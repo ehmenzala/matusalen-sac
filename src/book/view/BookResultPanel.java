@@ -43,6 +43,9 @@ public class BookResultPanel extends JPanel {
         resultTitle.setText(book.getTitle());
         resultAuthor.setFont(new Font("sansserif", 2, 14));
         resultAuthor.setText(book.getAuthor());
+        
+        // Opens the detail view for the book
+        resultBtn.addActionListener((e) -> new BookDetail(book).setVisible(true));
 
         if (panelType == PanelType.LONG) {
             System.out.println("LONG");
