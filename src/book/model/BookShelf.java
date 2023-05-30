@@ -39,16 +39,16 @@ public class BookShelf {
         Book[] searchResults;
         
         switch (searchType) {
-            case "title":
+            case "título":
                 searchResults = searchByTitle(searchTerm);
                 break;
-            case "author":
+            case "autor":
                 searchResults = searchByAuthor(searchTerm);
                 break;
-            case "genre":
+            case "género":
                 searchResults = searchByGenre(searchTerm);
                 break;
-            case "numberOfPages":
+            case "no. páginas":
                 searchResults = searchByPages(searchTerm);
                 break;
             default:
@@ -72,41 +72,47 @@ public class BookShelf {
     private Book[] searchByTitle(String searchTerm) {
         ArrayList<Book> searchResults = new ArrayList<>();
         for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(searchTerm)) {
+            String bookTitle = book.getTitle().toLowerCase();
+            String searchTitle = searchTerm.toLowerCase();
+            if (bookTitle.contains(searchTitle)) {
                 searchResults.add(book);
             }
         }
-        return (Book[]) searchResults.toArray();
+        return searchResults.toArray(new Book[0]);
     }
     
     private Book[] searchByAuthor(String searchTerm) {
         ArrayList<Book> searchResults = new ArrayList<>();
         for (Book book : books) {
-            if (book.getAuthor().equalsIgnoreCase(searchTerm)) {
+            String bookAuthor = book.getAuthor().toLowerCase();
+            String searchAuthor = searchTerm.toLowerCase();
+            if (bookAuthor.contains(searchAuthor)) {
                 searchResults.add(book);
             }
         }
-        return (Book[]) searchResults.toArray();
+        return searchResults.toArray(new Book[0]);
     }
     
     private Book[] searchByGenre(String searchTerm) {
         ArrayList<Book> searchResults = new ArrayList<>();
         for (Book book : books) {
-            if (book.getGenre().equalsIgnoreCase(searchTerm)) {
+            String bookGenre = book.getGenre().toLowerCase();
+            String searchGenre = searchTerm.toLowerCase();
+            if (bookGenre.contains(searchGenre)) {
                 searchResults.add(book);
             }
         }
-        return (Book[]) searchResults.toArray();
+        return searchResults.toArray(new Book[0]);
     }
     
     private Book[] searchByPages(String searchTerm) {
         int searchPages = Integer.parseInt(searchTerm);
         ArrayList<Book> searchResults = new ArrayList<>();
         for (Book book : books) {
-            if (book.getNumberOfPages() == searchPages) {
+            if (book.getNumberOfPages() >= searchPages) {
                 searchResults.add(book);
             }
         }
-        return (Book[]) searchResults.toArray();
+        return searchResults.toArray(new Book[0]);
     }
 }
