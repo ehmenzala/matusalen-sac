@@ -1,7 +1,6 @@
 package book.view;
 
 import book.model.Book;
-import book.model.Book;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Image;
