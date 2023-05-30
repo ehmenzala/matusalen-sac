@@ -48,7 +48,6 @@ public class BookResultPanel extends JPanel {
         resultBtn.addActionListener((e) -> new BookDetail(book).setVisible(true));
 
         if (panelType == PanelType.LONG) {
-            System.out.println("LONG");
             resultLayout.setHorizontalGroup(
                     resultLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
@@ -60,7 +59,6 @@ public class BookResultPanel extends JPanel {
                                     .addComponent(resultBtn)
                                     .addGap(17, 17, 17)));
         } else {
-            System.out.println("DEFAULT");
             resultLayout.setHorizontalGroup(
                     resultLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(GroupLayout.Alignment.TRAILING, resultLayout.createSequentialGroup()
