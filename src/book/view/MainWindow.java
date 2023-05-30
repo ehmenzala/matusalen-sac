@@ -14,7 +14,11 @@ public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
-        colocarImagen(lblTutorialImage, "./src/images/tutorial-image.png");
+        colocarImagen(lblWeAreHereImg, "./src/images/we-are-here.png");
+        colocarImagen(lblOptionsImg, "./src/images/combo-options.png");
+        colocarImagen(lblMiBusquedaImg, "./src/images/busqueda.png");
+        colocarImagen(lblBtnBuscarImg, "./src/images/btn-buscar.png");
+        colocarImagen(lblBtnOrdenarImg, "./src/images/btn-ordenar.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -34,43 +38,79 @@ public class MainWindow extends javax.swing.JFrame {
         resultsScrollPane = new javax.swing.JScrollPane();
         pnlResults = new javax.swing.JPanel();
         pnlNosotros = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         pnlTutorial = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        lblTutorialImage = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblWeAreHereImg = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lblOptionsImg = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        lblMiBusquedaImg = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        lblBtnBuscarImg = new javax.swing.JLabel();
+        lblBtnOrdenarImg = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
+        pnlBuscar.setBackground(new java.awt.Color(102, 102, 102));
         pnlBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("por");
-        pnlBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
-        pnlBuscar.add(txtSearchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 120, 30));
+        pnlBuscar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtSearchBox.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pnlBuscar.add(txtSearchBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 120, 30));
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Búsqueda");
         pnlBuscar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
+        cbxCriteria.setBackground(new java.awt.Color(51, 51, 51));
         cbxCriteria.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        cbxCriteria.setForeground(new java.awt.Color(255, 255, 255));
         cbxCriteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Título", "Género", "Autor", "No. páginas" }));
-        pnlBuscar.add(cbxCriteria, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 110, 30));
+        pnlBuscar.add(cbxCriteria, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 110, 30));
 
+        btnOrder.setBackground(new java.awt.Color(51, 51, 51));
         btnOrder.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnOrder.setForeground(new java.awt.Color(255, 255, 255));
         btnOrder.setText("Ordenar");
-        pnlBuscar.add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 110, 30));
+        btnOrder.setBorder(null);
+        pnlBuscar.add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, 110, 30));
 
+        btnSearch.setBackground(new java.awt.Color(51, 51, 51));
         btnSearch.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Buscar");
-        pnlBuscar.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 30));
+        btnSearch.setBorder(null);
+        pnlBuscar.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 110, 30));
 
+        resultsFrame.setBackground(new java.awt.Color(153, 153, 153));
         resultsFrame.setVisible(true);
 
+        resultsScrollPane.setForeground(new java.awt.Color(204, 204, 204));
+
+        pnlResults.setBackground(new java.awt.Color(204, 204, 204));
         pnlResults.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout pnlResultsLayout = new javax.swing.GroupLayout(pnlResults);
@@ -106,37 +146,110 @@ public class MainWindow extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Buscar", pnlBuscar);
 
+        jPanel3.setBackground(new java.awt.Color(237, 228, 219));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 685, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 428, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnlNosotrosLayout = new javax.swing.GroupLayout(pnlNosotros);
         pnlNosotros.setLayout(pnlNosotrosLayout);
         pnlNosotrosLayout.setHorizontalGroup(
             pnlNosotrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlNosotrosLayout.setVerticalGroup(
             pnlNosotrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Nosotros", pnlNosotros);
 
+        pnlTutorial.setBackground(new java.awt.Color(190, 219, 223));
         pnlTutorial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
+        jPanel2.setBackground(new java.awt.Color(212, 231, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTutorialImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(lblTutorialImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 493, 310));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("¿Cómo realizo mi búsqueda?");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
-        jLabel3.setText("acuerdo a sus preferencias. ¡Esperamos que disfrute de su estadía en la biblioteca!");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setText("    criterio de búsqueda que haya utilizado) haga clic en el botón Ordenar.");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 670, -1, -1));
+        jPanel2.add(lblWeAreHereImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 259, 61));
 
-        jLabel4.setText("Para utilizar al máximo nuestra aplicación, debe dirigirse hacia la pestaña de búsqueda");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setText("Esta es nuestra nueva herramienta de búsqueda. Te enseñaremos cómo utilizarla.");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel5.setText("(Según lo indica la imagen superior). Luego de eso, puede realizar su búsqueda de");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setText("Nuestra herramienta consta de 3 pestañas.");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("• Búsqueda:");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("• Nosotros:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel12.setText("Aquí encontraras información sobre nuestra empresa y contacto.");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel13.setText("Aquí te mostrarmos brevemente cómo utilizar nuestr herramienta.");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("• ¿Cómo usar?:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel15.setText("¡Bienvenido(a)!");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setText("En esta pestaña se realiza la búsqueda de libros");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel17.setText("1) Dirígete a la pestaña de Búsqueda.");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        jPanel2.add(lblOptionsImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 124, 140));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel18.setText("2) Escoge el criterio de búsqueda en la caja de opciones");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        jPanel2.add(lblMiBusquedaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 233, 62));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel19.setText("3) Digite en la caja de texto su búsqueda");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setText("4) Haga clic en el botón Buscar y ¡Listo!");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel21.setText("5) Si desea ordenar los resultados de búsqueda en forma ascendente (Dependiendo del");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, -1, -1));
+        jPanel2.add(lblBtnBuscarImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 600, 130, 48));
+        jPanel2.add(lblBtnOrdenarImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 127, 46));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 750, 170, 30));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -264,15 +377,34 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbxCriteria;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel lblTutorialImage;
+    private javax.swing.JLabel lblBtnBuscarImg;
+    private javax.swing.JLabel lblBtnOrdenarImg;
+    private javax.swing.JLabel lblMiBusquedaImg;
+    private javax.swing.JLabel lblOptionsImg;
+    private javax.swing.JLabel lblWeAreHereImg;
     private javax.swing.JPanel pnlBuscar;
     private javax.swing.JPanel pnlNosotros;
     private javax.swing.JPanel pnlResults;
