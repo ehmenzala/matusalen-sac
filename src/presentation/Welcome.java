@@ -43,7 +43,7 @@ public class Welcome extends javax.swing.JFrame {
         lblEslogan.setForeground(new java.awt.Color(255, 255, 255));
         lblEslogan.setText("\"Ayudando a crecer tu conocimiento\"");
 
-        lblFrase.setForeground(new java.awt.Color(0, 0, 204));
+        lblFrase.setForeground(new java.awt.Color(255, 255, 51));
         lblFrase.setText("\"EL QUE GANA, NO PIERDE ");
 
         btnEntrar.setBackground(new java.awt.Color(0, 0, 204));

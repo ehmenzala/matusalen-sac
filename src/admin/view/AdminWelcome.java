@@ -42,6 +42,7 @@ public class AdminWelcome extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("<html><div style='text-align: center;'>\"AYUDANDO A CRECER<br/>TU CONOCIMIENTO\"</div></html>");
+        jLabel2.setFocusable(false);
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 380, 60));
 
         String nombre = "Juan xd";

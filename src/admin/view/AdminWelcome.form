@@ -69,6 +69,7 @@
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot;&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;\&quot;AYUDANDO A CRECER&lt;br/&gt;TU CONOCIMIENTO\&quot;&lt;/div&gt;&lt;/html&gt;&quot;" type="code"/>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
