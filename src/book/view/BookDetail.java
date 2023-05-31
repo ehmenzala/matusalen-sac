@@ -67,12 +67,13 @@ public class BookDetail extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblFragmento.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblFragmento.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblFragmento.setForeground(new java.awt.Color(255, 255, 0));
         lblFragmento.setText("FRAGMENTO");
-        jPanel2.add(lblFragmento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 130, 20));
+        jPanel2.add(lblFragmento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 160, 20));
 
         textArea.setColumns(20);
+        textArea.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
@@ -82,69 +83,79 @@ public class BookDetail extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitulo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 0));
         lblTitulo.setText("TÍTULO :");
-        jPanel3.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 70, 20));
+        jPanel3.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 80, 20));
 
-        lblAutor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblAutor.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAutor.setForeground(new java.awt.Color(255, 255, 0));
         lblAutor.setText("AUTOR :");
-        jPanel3.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
+        jPanel3.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 80, 20));
 
-        lblGenero.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblGenero.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblGenero.setForeground(new java.awt.Color(255, 255, 0));
         lblGenero.setText("GÉNERO :");
-        jPanel3.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 70, 20));
+        jPanel3.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 90, 20));
 
-        lblIdioma.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblIdioma.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblIdioma.setForeground(new java.awt.Color(255, 255, 0));
         lblIdioma.setText("IDIOMA :");
-        jPanel3.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 70, 20));
+        jPanel3.add(lblIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 90, 20));
 
-        lblISBN.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblISBN.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblISBN.setForeground(new java.awt.Color(255, 255, 0));
         lblISBN.setText("ISBN :");
-        jPanel3.add(lblISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
+        jPanel3.add(lblISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 60, 20));
 
-        lblAnio.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblAnio.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblAnio.setForeground(new java.awt.Color(255, 255, 0));
         lblAnio.setText("AÑO:");
-        jPanel3.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 40, 20));
+        jPanel3.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 50, 20));
 
-        lblRating.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblRating.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblRating.setForeground(new java.awt.Color(255, 255, 0));
         lblRating.setText("CALIFICACIÓN :");
-        jPanel3.add(lblRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 130, 20));
+        jPanel3.add(lblRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 150, 20));
 
-        lblCrating.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCrating.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCrating.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCrating, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 30, 20));
+        jPanel3.add(lblCrating, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 30, 20));
 
-        lblCtitulo.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCtitulo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCtitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 20));
+        lblCtitulo.setText("XXXXXXX");
+        jPanel3.add(lblCtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 180, 20));
 
-        lblCautor.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCautor.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCautor.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCautor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 200, 20));
+        lblCautor.setText("XXXXXXXXXX");
+        jPanel3.add(lblCautor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 180, 20));
 
-        lblCgenero.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCgenero.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCgenero.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCgenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 200, 20));
+        lblCgenero.setText("XXXXXXXXXX");
+        jPanel3.add(lblCgenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 170, 20));
 
-        lblCidioma.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCidioma.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCidioma.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCidioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 200, 20));
+        lblCidioma.setText("XXXXXXXXXX");
+        jPanel3.add(lblCidioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 180, 20));
 
-        lblCisbn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCisbn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCisbn.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCisbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 110, 20));
+        lblCisbn.setText("XXXXXXXXXXXX");
+        jPanel3.add(lblCisbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 200, 20));
 
-        lblCanio.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        lblCanio.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCanio.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(lblCanio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 180, 20));
-        jPanel3.add(lblStar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 20, 20));
+        lblCanio.setText("XXXXXX");
+        jPanel3.add(lblCanio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 180, 20));
+
+        lblStar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        lblStar.setForeground(new java.awt.Color(255, 255, 255));
+        lblStar.setText("X");
+        jPanel3.add(lblStar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 20, 20));
         jPanel3.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
