@@ -33,6 +33,7 @@ public class AdminController implements ActionListener {
                 AdminWelcome aw = new AdminWelcome();
                 aw.setVisible(true);
                 aw.setLocationRelativeTo(null);
+                aw.lblAdminWelcome.setText("Bienvenido, " + as.getAdmin().getName());
             } else {
                 System.out.println("no");
             }
