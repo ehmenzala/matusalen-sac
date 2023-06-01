@@ -44,6 +44,7 @@ public class AdminSessionFetcher {
     }
     
     // Devuelve un arreglo de arreglos, cuyos elementos tienen todos los atributos de los admins.
+    // Igual que el bookfetcher
     private ArrayList<ArrayList<String>> readAllSessions() {
         ArrayList<ArrayList<String>> sessions = new ArrayList<>();
         
@@ -71,7 +72,7 @@ public class AdminSessionFetcher {
         String[] parts = adminSessionData.split("\\|");
         String name = parts[0];
         String email = parts[1];
-        String pasword = parts[2];
-        return new ArrayList(Arrays.asList(name, email, pasword));
+        String password = parts[2];
+        return new ArrayList(Arrays.asList(name, email, password));
     }
 }
