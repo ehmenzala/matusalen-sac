@@ -19,6 +19,8 @@ public class MainWindowController {
     }
 
     public void showWindow() {
+        mainWindow.setTitle("Ventana Principal");
+        mainWindow.setLocationRelativeTo(null);
         mainWindow.setVisible(true);
     }
 
