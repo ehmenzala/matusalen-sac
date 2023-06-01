@@ -34,6 +34,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblBiblio = new javax.swing.JLabel();
         lblnegro = new javax.swing.JLabel();
@@ -82,7 +83,7 @@ public class AdminLogin extends javax.swing.JFrame {
         btnIngresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         btnIngresar.setText("Ingresar");
         btnIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 130, 40));
+        jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 130, 40));
 
         jSeparator2.setForeground(new java.awt.Color(199, 160, 46));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 260, 10));
@@ -106,6 +107,12 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(199, 160, 46));
         jLabel3.setText("Contraseña");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
+
+        btnRegresar.setBackground(new java.awt.Color(199, 160, 46));
+        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 40));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bodoni Bd BT", 1, 30)); // NOI18N
@@ -173,6 +180,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnIngresar;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
