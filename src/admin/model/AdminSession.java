@@ -27,8 +27,8 @@ public class AdminSession {
     public String getPassword() {
         return password;
     }
-    
-    protected String encryptWithSHA256 (String toEncrypt) {
+
+    private static String encryptWithSHA256 (String toEncrypt) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] encodedHash = digest.digest(toEncrypt.getBytes(StandardCharsets.UTF_8));
