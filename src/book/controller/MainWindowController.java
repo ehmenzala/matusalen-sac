@@ -56,14 +56,4 @@ public class MainWindowController {
     private void showErrorMessage(String message, String title) {
         JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
     }
-
-    // For demo only
-    public static void main(String[] args) {
-
-        MainWindow mainWindow = new MainWindow();
-        BookShelf bs = new BookShelf();
-        MainWindowController controller = new MainWindowController(mainWindow, bs);
-
-        controller.showWindow();
-    }
 }
