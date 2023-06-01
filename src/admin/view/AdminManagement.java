@@ -1,15 +1,13 @@
-package book.view;
+package admin.view;
 
 import utilities.MetodoGeneral;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import java.awt.event.ActionListener;
 
-public class BookManagement extends javax.swing.JFrame {
+public class AdminManagement extends javax.swing.JFrame {
 
-    public BookManagement() {
+    public AdminManagement() {
         initComponents();
+        this.setLocationRelativeTo(null);
         MetodoGeneral.colocarImagen(lblModificar, "./src/images/modificar.png");
         MetodoGeneral.colocarImagen(lblAgregar, "./src/images/agregar.png");
         MetodoGeneral.colocarImagen(lblEliminar, "./src/images/eliminar.png");
@@ -27,11 +25,11 @@ public class BookManagement extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         lblGenero = new javax.swing.JLabel();
-        lblID = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        lblNombreAutor = new javax.swing.JLabel();
+        lblAutor = new javax.swing.JLabel();
         lblISBN = new javax.swing.JLabel();
-        lblAño = new javax.swing.JLabel();
+        lblAnio = new javax.swing.JLabel();
         lblEditorial = new javax.swing.JLabel();
         lblEliminar = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
@@ -45,7 +43,7 @@ public class BookManagement extends javax.swing.JFrame {
         lblFondo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblBuscar = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
+        btnBuscarId = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         lblLOGO = new javax.swing.JLabel();
@@ -62,15 +60,15 @@ public class BookManagement extends javax.swing.JFrame {
 
         lblGenero.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Género", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
-        lblID.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        lblId.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
         lblTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Título", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
-        lblNombreAutor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre del Autor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        lblAutor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre del Autor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
         lblISBN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ISBN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
-        lblAño.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Año", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        lblAnio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Año", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
         lblEditorial.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editorial", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
 
@@ -81,12 +79,12 @@ public class BookManagement extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblID, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAño, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
@@ -94,15 +92,15 @@ public class BookManagement extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addComponent(lblID, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNombreAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblAño, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -149,12 +147,12 @@ public class BookManagement extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 20, 20));
 
-        btnBuscar.setBackground(new java.awt.Color(0, 0, 0, 100));
-        btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        btnBuscar.setText("Buscar por ID");
-        btnBuscar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 140, 40));
+        btnBuscarId.setBackground(new java.awt.Color(0, 0, 0, 100));
+        btnBuscarId.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBuscarId.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarId.setText("Buscar por ID");
+        btnBuscarId.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel2.add(btnBuscarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 140, 40));
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -174,7 +172,7 @@ public class BookManagement extends javax.swing.JFrame {
 
         lblLOGO.setBackground(new java.awt.Color(0, 0, 0));
         lblLOGO.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MATUSALEN S.A.C", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 0))); // NOI18N
-        jPanel2.add(lblLOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 270, 210));
+        jPanel2.add(lblLOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 270, 260));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 255, 255));
@@ -208,6 +206,50 @@ public class BookManagement extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    public String getId() {
+        return this.lblId.getText();
+    }
+    
+    public String getTitulo() {
+        return this.lblTitulo.getText();
+    }
+    
+    public String getAutor() {
+        return this.lblAutor.getText();
+    }
+    
+    public String getAnio() {
+        return this.lblAnio.getText();
+    }
+    
+    public String getISBN() {
+        return this.lblISBN.getText();
+    }
+    
+    public String getGenero() {
+        return this.lblGenero.getText();
+    }
+    
+    public void onModifyClick(ActionListener listener) {
+        btnModificar.addActionListener(listener);
+    }
+
+    public void onDeleteClick(ActionListener listener) {
+        btnEliminar.addActionListener(listener);
+    }
+
+    public void onAddClick(ActionListener listener) {
+        btnAgregar.addActionListener(listener);
+    }
+
+    public void onCleanClick(ActionListener listener) {
+        btnLimpiar.addActionListener(listener);
+    }
+
+    public void onSearchByIdClick(ActionListener listener) {
+        btnBuscarId.addActionListener(listener);
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -222,29 +264,27 @@ public class BookManagement extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BookManagement().setVisible(true);
+                new AdminManagement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarId;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
@@ -255,19 +295,19 @@ public class BookManagement extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAgregar;
-    private javax.swing.JLabel lblAño;
+    private javax.swing.JLabel lblAnio;
+    private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblEditorial;
     private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblFondo2;
     private javax.swing.JLabel lblGenero;
-    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblISBN;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLOGO;
     private javax.swing.JLabel lblLimpiar;
     private javax.swing.JLabel lblModificar;
-    private javax.swing.JLabel lblNombreAutor;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblZonaAdmin;
     // End of variables declaration//GEN-END:variables

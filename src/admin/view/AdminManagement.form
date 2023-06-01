@@ -80,12 +80,12 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="16" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblID" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="lblId" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="lblGenero" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="lblEditorial" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="lblISBN" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="lblAño" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="lblNombreAutor" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="lblAnio" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="lblAutor" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="lblTitulo" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -96,15 +96,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="lblID" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="lblId" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblTitulo" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblNombreAutor" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="lblAutor" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblEditorial" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblAño" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="lblAnio" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblISBN" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -127,7 +127,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblID">
+            <Component class="javax.swing.JLabel" name="lblId">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -151,7 +151,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblNombreAutor">
+            <Component class="javax.swing.JLabel" name="lblAutor">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -175,7 +175,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblA&#xf1;o">
+            <Component class="javax.swing.JLabel" name="lblAnio">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -364,7 +364,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="btnBuscar">
+        <Component class="javax.swing.JButton" name="btnBuscarId">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new java.awt.Color(0, 0, 0, 100)" type="code"/>
@@ -430,7 +430,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="190" y="360" width="270" height="210"/>
+              <AbsoluteConstraints x="190" y="310" width="270" height="260"/>
             </Constraint>
           </Constraints>
         </Component>
