@@ -1,6 +1,7 @@
 package book.model;
 
 import java.util.ArrayList;
+import utilities.Algorithms;
 
 public class BookShelf {
 
@@ -23,6 +24,126 @@ public class BookShelf {
     public void addBook(Book book) {
         books.add(book);
         bf.createBook(book);
+    }
+    
+    /******************
+    * SORT OPERATIONS *
+    ******************/
+    
+    /**
+     * @param bookResults el arreglo de resultados obtenidos.
+     * @param criteria el criterio de búsqueda (título, género, autor o no. páginas).
+     * @return resultados de la búsqueda ordenados.
+     */
+    public Book[] sortBooksByCriteria (Book[] bookResults, String criteria) {
+        Book[] sortedResults;
+        
+        switch (criteria) {
+            case "título":
+                sortedResults = sortByTitle(bookResults);
+                break;
+            case "autor":
+                sortedResults = sortByAuthor(bookResults);
+                break;
+            case "género":
+                sortedResults = sortByGenre(bookResults);
+                break;
+            case "no. páginas":
+                sortedResults = sortByPages(bookResults);
+                break;
+            default:
+                throw new AssertionError();
+        }
+        
+        return sortedResults;
+    }
+    
+    private Book[] sortByTitle(Book[] bookResults) {
+        String[] titles = new String[bookResults.length];
+        
+        for (int i = 0; i < bookResults.length; i++) {
+            titles[i] = bookResults[i].getTitle();
+        }
+        
+        titles = Algorithms.shellSortStrings(titles);
+        Book[] sortedBooks = new Book[bookResults.length];
+        
+        for (int i = 0; i < titles.length; i++) {
+            for (Book bookResult : bookResults) {
+               if (bookResult.getTitle().equals(titles[i])) {
+                   sortedBooks[i] = bookResult;
+                   break;
+               }
+            }
+        }
+        
+        return sortedBooks;
+    }
+    
+    private Book[] sortByAuthor(Book[] bookResults) {
+        String[] authors = new String[bookResults.length];
+        
+        for (int i = 0; i < bookResults.length; i++) {
+            authors[i] = bookResults[i].getAuthor();
+        }
+        
+        authors = Algorithms.shellSortStrings(authors);
+        Book[] sortedBooks = new Book[bookResults.length];
+        
+        for (int i = 0; i < authors.length; i++) {
+            for (Book bookResult : bookResults) {
+               if (bookResult.getAuthor().equals(authors[i])) {
+                   sortedBooks[i] = bookResult;
+                   break;
+               }
+            }
+        }
+        
+        return sortedBooks;
+    }
+    
+    private Book[] sortByGenre(Book[] bookResults) {
+        String[] genres = new String[bookResults.length];
+        
+        for (int i = 0; i < bookResults.length; i++) {
+            genres[i] = bookResults[i].getGenre();
+        }
+        
+        genres = Algorithms.insertionSortStrings(genres);
+        Book[] sortedBooks = new Book[bookResults.length];
+        
+        for (int i = 0; i < genres.length; i++) {
+            for (Book bookResult : bookResults) {
+               if (bookResult.getGenre().equals(genres[i])) {
+                   sortedBooks[i] = bookResult;
+                   break;
+               }
+            }
+        }
+        
+        return sortedBooks;
+    }
+    
+    private Book[] sortByPages(Book[] bookResults) {
+        int[] pages = new int[bookResults.length];
+        
+        for (int i = 0; i < bookResults.length; i++) {
+            pages[i] = bookResults[i].getNumberOfPages();
+        }
+        
+        pages = Algorithms.quicksort(pages);
+        Book[] sortedBooks = new Book[bookResults.length];
+        
+        for (int i = 0; i < pages.length; i++) {
+            for (Book bookResult : bookResults) {
+               if (bookResult.getNumberOfPages() == pages[i]) {
+                   sortedBooks[i] = bookResult;
+                   break;
+               }
+            }
+        }
+        
+        return sortedBooks;
     }
     
     /********************
