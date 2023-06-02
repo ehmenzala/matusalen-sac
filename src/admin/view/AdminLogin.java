@@ -13,6 +13,7 @@ public class AdminLogin extends javax.swing.JFrame {
         MetodoGeneral.colocarImagen(lblnegro, "./src/images/descargar.jpeg");
         MetodoGeneral.colocarImagen(lblmatusalen, "./src/images/matusalen-logo-dark.png");
         MetodoGeneral.colocarImagen(lblNombre, "./src/images/perfil.png");
+        MetodoGeneral.colocarImagen(lblRegresar, "./src/images/regresar.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +35,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lblRegresar = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblBiblio = new javax.swing.JLabel();
@@ -110,19 +112,19 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(199, 160, 46));
         jLabel3.setText("Contraseña");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
+        jPanel2.add(lblRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 50));
 
-        btnRegresar.setBackground(new java.awt.Color(199, 160, 46));
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        btnRegresar.setText("Regresar");
-        btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 40));
+        btnRegresar.setBorder(null);
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bodoni Bd BT", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(199, 160, 46));
         jLabel1.setText("Iniciar Sesión");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 200, 50));
-        jPanel2.add(lblBiblio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 310, 450));
+        jPanel2.add(lblBiblio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 450));
         jPanel2.add(lblnegro, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 370, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,6 +196,7 @@ public class AdminLogin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblBiblio;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblRegresar;
     private javax.swing.JLabel lblcorreo;
     private javax.swing.JLabel lblmatusalen;
     private javax.swing.JLabel lblnegro;
