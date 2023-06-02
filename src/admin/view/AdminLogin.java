@@ -46,6 +46,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         txtNombre.setBackground(new java.awt.Color(0, 0, 0));
         txtNombre.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombre.setText("Esteban");
         txtNombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +58,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         txtCorreo.setBackground(new java.awt.Color(0, 0, 0));
         txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        txtCorreo.setText("correo@correo.com");
         txtCorreo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +92,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         pswContraseña.setBackground(new java.awt.Color(0, 0, 0));
         pswContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        pswContraseña.setText("micontra");
         pswContraseña.setBorder(null);
         jPanel2.add(pswContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 210, 40));
         jPanel2.add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 30, 30));

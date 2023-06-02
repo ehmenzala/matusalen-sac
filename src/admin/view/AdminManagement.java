@@ -165,7 +165,7 @@ public class AdminManagement extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 330, 440));
         jPanel1.add(lblEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 30, 30));
 
-        btnEliminar.setBackground(new java.awt.Color(0, 0, 0, 100));
+        btnEliminar.setBackground(new java.awt.Color(36, 35, 35));
         btnEliminar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Eliminar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 10), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,17 +175,17 @@ public class AdminManagement extends javax.swing.JFrame {
         jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 70, 60));
         jPanel1.add(lblAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, 30, 30));
 
-        btnAgregar.setBackground(new java.awt.Color(0, 0, 0, 100));
+        btnAgregar.setBackground(new java.awt.Color(36, 35, 35));
         btnAgregar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 10), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 60, 60));
         jPanel1.add(lblLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 30, 30));
 
-        btnLimpiar.setBackground(new java.awt.Color(0, 0, 0, 100));
+        btnLimpiar.setBackground(new java.awt.Color(36, 35, 35));
         btnLimpiar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Limpiar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 10), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 60, 60));
         jPanel1.add(lblModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 40, 30));
 
-        btnModificar.setBackground(new java.awt.Color(0, 0, 0, 100));
+        btnModificar.setBackground(new java.awt.Color(36, 35, 35));
         btnModificar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Modificar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 10), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 70, 60));
 
@@ -406,7 +406,7 @@ public class AdminManagement extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBuscarId;

@@ -6,14 +6,15 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import book.model.Book;
+import utilities.MetodoGeneral;
 
 
 public class BookDetail extends javax.swing.JFrame {
     
     public BookDetail(Book book) {
         initComponents();
-        colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
-        colocarImagen(lblStar, "./src/images/estrella-amar.png");
+        MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
+        MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
         
         // Cosas del textArea
         textArea.setEditable(false); //para evitar la edición del texto
@@ -162,13 +163,6 @@ public class BookDetail extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel2;

@@ -1,15 +1,18 @@
 package admin.view;
 
+import admin.controller.AdminController;
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import utilities.MetodoGeneral;
 
 public class AdminWelcome extends javax.swing.JFrame {
     
     public AdminWelcome() {
         initComponents();
-        colocarImagen(lblLibrosImg, "./src/images/old-books.jpg");
+        MetodoGeneral.colocarImagen(lblLibrosImg, "./src/images/old-books.jpg");
     }
     
     @SuppressWarnings("unchecked")
@@ -23,7 +26,7 @@ public class AdminWelcome extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
         lblLibrosImg = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Welcome Adm");
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -71,19 +74,12 @@ public class AdminWelcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseExited
-    
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEntrar;

@@ -9,16 +9,17 @@ import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.GroupLayout.SequentialGroup;
+import utilities.MetodoGeneral;
 
 public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
-        colocarImagen(lblWeAreHereImg, "./src/images/we-are-here.png");
-        colocarImagen(lblOptionsImg, "./src/images/combo-options.png");
-        colocarImagen(lblMiBusquedaImg, "./src/images/busqueda.png");
-        colocarImagen(lblBtnBuscarImg, "./src/images/btn-buscar.png");
-        colocarImagen(lblBtnOrdenarImg, "./src/images/btn-ordenar.png");
+        MetodoGeneral.colocarImagen(lblWeAreHereImg, "./src/images/we-are-here.png");
+        MetodoGeneral.colocarImagen(lblOptionsImg, "./src/images/combo-options.png");
+        MetodoGeneral.colocarImagen(lblMiBusquedaImg, "./src/images/busqueda.png");
+        MetodoGeneral.colocarImagen(lblBtnBuscarImg, "./src/images/btn-buscar.png");
+        MetodoGeneral.colocarImagen(lblBtnOrdenarImg, "./src/images/btn-ordenar.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -420,13 +421,6 @@ public class MainWindow extends javax.swing.JFrame {
         resultsScrollPane.setViewportView(pnlResults);
     }
     
-    private void colocarImagen(JLabel lbl, String ruta) {
-        ImageIcon image = new ImageIcon(ruta);
-        Icon icono = new ImageIcon(image.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT));
-        lbl.setIcon(icono);
-        this.repaint();
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnSearch;
