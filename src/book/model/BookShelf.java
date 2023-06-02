@@ -20,10 +20,34 @@ public class BookShelf {
     public ArrayList<Book> getBooks() {
         return this.books;
     }
-
+    
+    // CREATE
     public void addBook(Book book) {
         books.add(book);
         bf.createBook(book);
+        books = bf.readAllBooks(); // Updates the book ArrayList
+    }
+    
+    // READ
+    public Book getBook(int id) {
+        for (Book book : books) {
+            if (book.getId() == id) {
+                return book;
+            }
+        }
+        return null;
+    }
+    
+    // UPDATE
+    public void updateBook(Book toUpdateBook) {
+        bf.updateBook(toUpdateBook);
+        books = bf.readAllBooks(); // Updates the book ArrayList
+    }
+    
+    // DELETE
+    public void deleteBook(int id) {
+        bf.deleteBook(id);
+        books = bf.readAllBooks(); // Updates the book ArrayList
     }
     
     /******************
