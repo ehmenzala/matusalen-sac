@@ -23,30 +23,64 @@ public class AdminController implements ActionListener {
         this.vistaLogin = vistaLogin;
         this.adminManagement = adminManagemet;
         this.vistaLogin.btnIngresar.addActionListener(this);
+        this.bs = new BookShelf();
         setActionListeners();
     }
 
     private void setActionListeners() {
+        
+        adminManagement.onSearchByIdClick((e) -> {
+            // Aquí tiene que abrirse la ventana que pregunta por el ID
+            // Y luego, de alguna manera, recuperar la ID que insertó el usuario
+            int id = Integer.parseInt(adminManagement.getId());
+            
+            Book foundBook = bs.getBook(id);
+            
+            adminManagement.setTitulo(foundBook.getTitle());
+            adminManagement.setAutor(foundBook.getAuthor());
+            adminManagement.setGenero(foundBook.getGenre());
+            adminManagement.setIdioma(foundBook.getLanguage());
+            adminManagement.setISBN(foundBook.getIsbn());
+            adminManagement.setFragmento(foundBook.getFragment());
+            adminManagement.setId(String.valueOf(foundBook.getId()));
+            adminManagement.setNumPaginas(String.valueOf(foundBook.getNumberOfPages()));
+            adminManagement.setAnio(String.valueOf(foundBook.getPublishedDate()));
+            adminManagement.setRating(String.valueOf(foundBook.getRating()));
+        });
 
         adminManagement.onModifyClick((e) -> {
-
-        });
-
-        adminManagement.onDeleteClick((e) -> {
-        });
-
-        adminManagement.onAddClick((e) -> {
-            
             String title = adminManagement.getTitulo();
             String author = adminManagement.getAutor();
             String genre = adminManagement.getGenero();
-            String language = "Idioma";
+            String language = adminManagement.getIdioma();
             String ISBN = adminManagement.getISBN();
-            String fragment = "Aasdkjhajd";
+            String fragment = adminManagement.getFragmento();
             int id = Integer.parseInt(adminManagement.getId());
-            int numPages = 55555;
+            int numPages = Integer.parseInt(adminManagement.getNumPaginas());
             int publishedDate = Integer.parseInt(adminManagement.getAnio());
-            int rating = 5;
+            int rating = Integer.parseInt(adminManagement.getRating());
+            
+            bs.updateBook(new Book(id, title, author, genre, 
+                    numPages, publishedDate,
+                    language, ISBN, rating, fragment));
+        });
+
+        adminManagement.onDeleteClick((e) -> {
+            int bookId = Integer.parseInt(adminManagement.getId());
+            bs.deleteBook(bookId);
+        });
+
+        adminManagement.onAddClick((e) -> {
+            String title = adminManagement.getTitulo();
+            String author = adminManagement.getAutor();
+            String genre = adminManagement.getGenero();
+            String language = adminManagement.getIdioma();
+            String ISBN = adminManagement.getISBN();
+            String fragment = adminManagement.getFragmento();
+            int id = Integer.parseInt(adminManagement.getId());
+            int numPages = Integer.parseInt(adminManagement.getNumPaginas());
+            int publishedDate = Integer.parseInt(adminManagement.getAnio());
+            int rating = Integer.parseInt(adminManagement.getRating());
 
             // Modificar numero de pagina
             Book bookToAdd = new Book(
@@ -57,9 +91,16 @@ public class AdminController implements ActionListener {
         });
 
         adminManagement.onCleanClick((e) -> {
-        });
-
-        adminManagement.onSearchByIdClick((e) -> {
+            adminManagement.setTitulo("");
+            adminManagement.setAutor("");
+            adminManagement.setGenero("");
+            adminManagement.setIdioma("");
+            adminManagement.setISBN("");
+            adminManagement.setFragmento("");
+            adminManagement.setId("");
+            adminManagement.setNumPaginas("");
+            adminManagement.setAnio("");
+            adminManagement.setRating("");
         });
     }
 

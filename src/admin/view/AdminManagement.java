@@ -287,8 +287,16 @@ public class AdminManagement extends javax.swing.JFrame {
         return this.txtAutor.getText();
     }
     
+    public String getIdioma() {
+        return this.txtIdioma.getText();
+    }
+    
     public String getAnio() {
         return this.txtAnio.getText();
+    }
+    
+    public String getFragmento() {
+        return this.txtFragmento.getText();
     }
     
     public String getISBN() {
@@ -297,6 +305,54 @@ public class AdminManagement extends javax.swing.JFrame {
     
     public String getGenero() {
         return this.txtGenero.getText();
+    }
+    
+    public String getRating() {
+        return this.txtRating.getText();
+    }
+    
+    public String getNumPaginas() {
+        return this.txtPaginas.getText();
+    }
+    
+    public void setId(String newData) {
+        this.txtID.setText(newData);
+    }
+    
+    public void setTitulo(String newData) {
+        this.txtTitulo.setText(newData);
+    }
+    
+    public void setAutor(String newData) {
+        this.txtAutor.setText(newData);
+    }
+    
+    public void setIdioma(String newData) {
+        this.txtIdioma.setText(newData);
+    }
+    
+    public void setAnio(String newData) {
+        this.txtAnio.setText(newData);
+    }
+    
+    public void setFragmento(String newData) {
+        this.txtFragmento.setText(newData);
+    }
+    
+    public void setISBN(String newData) {
+        this.txtISBN.setText(newData);
+    }
+    
+    public void setGenero(String newData) {
+        this.txtGenero.setText(newData);
+    }
+    
+    public void setRating(String newData) {
+        this.txtRating.setText(newData);
+    }
+    
+    public void setNumPaginas(String newData) {
+        this.txtPaginas.setText(newData);
     }
     
     public void onModifyClick(ActionListener listener) {
