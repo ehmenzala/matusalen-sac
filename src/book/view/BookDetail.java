@@ -13,6 +13,7 @@ public class BookDetail extends javax.swing.JFrame {
     
     public BookDetail(Book book) {
         initComponents();
+        
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
         
@@ -32,6 +33,7 @@ public class BookDetail extends javax.swing.JFrame {
         lblCrating.setText(String.valueOf(book.getRating()));
         //el fragmento
         textArea.setText(book.getFragment());
+        
     }
     
 

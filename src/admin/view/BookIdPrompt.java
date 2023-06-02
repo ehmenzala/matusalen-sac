@@ -1,5 +1,7 @@
 package admin.view;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
 import utilities.MetodoGeneral;
 
 public class BookIdPrompt extends javax.swing.JFrame {
@@ -109,12 +111,12 @@ public class BookIdPrompt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnOK;
+    public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblLIBRO;
     private javax.swing.JLabel lblfondo;
-    private javax.swing.JTextField txtID;
+    public javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

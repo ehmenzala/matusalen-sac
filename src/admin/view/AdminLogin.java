@@ -21,6 +21,8 @@ public class AdminLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        lblRegresar = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         lblcorreo = new javax.swing.JLabel();
@@ -35,8 +37,6 @@ public class AdminLogin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        lblRegresar = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblBiblio = new javax.swing.JLabel();
         lblnegro = new javax.swing.JLabel();
@@ -44,6 +44,12 @@ public class AdminLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(lblRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 50));
+
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnRegresar.setBorder(null);
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
         jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 30, 30));
 
         txtNombre.setBackground(new java.awt.Color(0, 0, 0));
@@ -112,12 +118,6 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(199, 160, 46));
         jLabel3.setText("Contraseña");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
-        jPanel2.add(lblRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 50, 50));
-
-        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
-        btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        btnRegresar.setBorder(null);
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bodoni Bd BT", 1, 30)); // NOI18N

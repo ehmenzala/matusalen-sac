@@ -87,7 +87,6 @@ public class AdminManagement extends javax.swing.JFrame {
         txtID.setBackground(new java.awt.Color(36, 35, 35));
         txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtID.setForeground(new java.awt.Color(255, 255, 255));
-        txtID.setText("200");
         txtID.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
