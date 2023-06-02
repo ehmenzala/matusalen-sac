@@ -1,6 +1,7 @@
 package book.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import utilities.Algorithms;
 
 public class BookShelf {
@@ -30,12 +31,16 @@ public class BookShelf {
     
     // READ
     public Book getBook(int id) {
-        for (Book book : books) {
-            if (book.getId() == id) {
-                return book;
-            }
+        int[] idArrays = new int[books.size()];
+        for (int i = 0; i < books.size(); i++) {
+            idArrays[i] = books.get(i).getId();
         }
-        return null;
+        
+        System.out.println("IDs ordenadas: " + Arrays.toString(idArrays));
+        
+        int foundBookIdIndex = Algorithms.binarySearch(idArrays, id);
+
+        return books.get(foundBookIdIndex);
     }
     
     // UPDATE
