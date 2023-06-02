@@ -16,7 +16,6 @@ public class AdminManagement extends javax.swing.JFrame {
         MetodoGeneral.colocarImagen(lblFondo3, "./src/images/bibliofondo.jpg");
         MetodoGeneral.colocarImagen(lblBuscar, "./src/images/buscar.png");
         MetodoGeneral.colocarImagen(lblFondoFrag, "./src/images/bibliofondo.jpg");
-        txtFragmento.setBackground(new java.awt.Color(0,0,0,150));
     }
 
     @SuppressWarnings("unchecked")
@@ -52,8 +51,9 @@ public class AdminManagement extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         lblFondo3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        txtFragmento = new javax.swing.JTextField();
         lblFondoFrag = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtareaFragmento = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -64,22 +64,27 @@ public class AdminManagement extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0, 200));
 
         txtAutor.setBackground(new java.awt.Color(36, 35, 35));
+        txtAutor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtAutor.setForeground(new java.awt.Color(255, 255, 255));
         txtAutor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Autor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtTitulo.setBackground(new java.awt.Color(36, 35, 35));
+        txtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Título", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtGenero.setBackground(new java.awt.Color(36, 35, 35));
+        txtGenero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtGenero.setForeground(new java.awt.Color(255, 255, 255));
         txtGenero.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Género", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtPaginas.setBackground(new java.awt.Color(36, 35, 35));
+        txtPaginas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtPaginas.setForeground(new java.awt.Color(255, 255, 255));
         txtPaginas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "N° Páginas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtAnio.setBackground(new java.awt.Color(36, 35, 35));
+        txtAnio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtAnio.setForeground(new java.awt.Color(255, 255, 255));
         txtAnio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Año de publicación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
@@ -95,14 +100,17 @@ public class AdminManagement extends javax.swing.JFrame {
         });
 
         txtRating.setBackground(new java.awt.Color(36, 35, 35));
+        txtRating.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtRating.setForeground(new java.awt.Color(255, 255, 255));
         txtRating.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rating", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtISBN.setBackground(new java.awt.Color(36, 35, 35));
+        txtISBN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtISBN.setForeground(new java.awt.Color(255, 255, 255));
         txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ISBN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
         txtIdioma.setBackground(new java.awt.Color(36, 35, 35));
+        txtIdioma.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtIdioma.setForeground(new java.awt.Color(255, 255, 255));
         txtIdioma.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Idioma", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 0))); // NOI18N
 
@@ -231,12 +239,20 @@ public class AdminManagement extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fragmento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtFragmento.setBackground(new java.awt.Color(36, 35, 35));
-        txtFragmento.setForeground(new java.awt.Color(255, 255, 255));
-        txtFragmento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fragmento:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 21), new java.awt.Color(255, 255, 0))); // NOI18N
-        jPanel4.add(txtFragmento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 600, 250));
         jPanel4.add(lblFondoFrag, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 17, 604, 296));
+
+        txtareaFragmento.setBackground(new java.awt.Color(36, 35, 35));
+        txtareaFragmento.setColumns(20);
+        txtareaFragmento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtareaFragmento.setForeground(new java.awt.Color(255, 255, 255));
+        txtareaFragmento.setLineWrap(true);
+        txtareaFragmento.setRows(5);
+        txtareaFragmento.setWrapStyleWord(true);
+        txtareaFragmento.setAutoscrolls(false);
+        txtareaFragmento.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fragmento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 0))); // NOI18N
+        jScrollPane2.setViewportView(txtareaFragmento);
+
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 570, 250));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,7 +311,7 @@ public class AdminManagement extends javax.swing.JFrame {
     }
     
     public String getFragmento() {
-        return this.txtFragmento.getText();
+        return this.txtareaFragmento.getText();
     }
     
     public String getISBN() {
@@ -335,7 +351,7 @@ public class AdminManagement extends javax.swing.JFrame {
     }
     
     public void setFragmento(String newData) {
-        this.txtFragmento.setText(newData);
+        this.txtareaFragmento.setText(newData);
     }
     
     public void setISBN(String newData) {
@@ -418,6 +434,7 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblBuscar;
@@ -430,7 +447,6 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JLabel lblZonaAdmin;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtAutor;
-    private javax.swing.JTextField txtFragmento;
     private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtISBN;
@@ -438,5 +454,6 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JTextField txtPaginas;
     private javax.swing.JTextField txtRating;
     private javax.swing.JTextField txtTitulo;
+    private javax.swing.JTextArea txtareaFragmento;
     // End of variables declaration//GEN-END:variables
 }
