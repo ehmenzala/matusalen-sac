@@ -14,6 +14,28 @@ public class BookFetcher {
 
     public BookFetcher() {
     }
+    
+    public int createNewId() {
+        int maxNumber = 0;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH));
+            String line = reader.readLine();
+            while (line != null) {
+                String[] parts = line.split("\\|");
+                int readNumber = Integer.parseInt(parts[0]);
+                if (readNumber > maxNumber) {
+                    maxNumber = readNumber;
+                }
+                line = reader.readLine();
+
+            }
+            System.out.println("MAX NUMBER: " + maxNumber);
+            return maxNumber + 1;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 
     public void createBook(Book book) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH, true))) {

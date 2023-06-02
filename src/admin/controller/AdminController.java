@@ -11,9 +11,7 @@ import book.model.BookShelf;
 import book.model.Book;
 import admin.view.BookIdPrompt;
 import java.awt.event.ActionListener;
-import presentation.Welcome;
-import book.controller.MainWindowController;
-import utilities.ControladorPrincipal;
+import book.model.BookFetcher;
 
 
 public class AdminController implements ActionListener {
@@ -21,6 +19,7 @@ public class AdminController implements ActionListener {
     private AdminLogin vistaLogin;
     // Maybe we will modify this later.
     private BookShelf bs;
+    private BookFetcher bf;
 
  
     public AdminController(AdminLogin vistaLogin,
@@ -30,6 +29,7 @@ public class AdminController implements ActionListener {
         this.vistaLogin.btnIngresar.addActionListener(this);
         this.vistaLogin.btnRegresar.addActionListener(this);
         this.bs = new BookShelf();
+        this.bf = new BookFetcher();
         setActionListeners();
     }
 
@@ -96,10 +96,10 @@ public class AdminController implements ActionListener {
             String language = adminManagement.getIdioma();
             String ISBN = adminManagement.getISBN();
             String fragment = adminManagement.getFragmento();
-            int id = Integer.parseInt(adminManagement.getId());
             int numPages = Integer.parseInt(adminManagement.getNumPaginas());
             int publishedDate = Integer.parseInt(adminManagement.getAnio());
             int rating = Integer.parseInt(adminManagement.getRating());
+            int id = bf.createNewId();
 
             // Modificar numero de pagina
             Book bookToAdd = new Book(
