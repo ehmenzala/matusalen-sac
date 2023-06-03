@@ -37,7 +37,7 @@ public class ControladorPrincipal implements ActionListener {
             MainWindow mainWindow = new MainWindow();
             BookShelf bs = new BookShelf();
             MainWindowController controller = new MainWindowController(mainWindow, bs);
-            
+//            mainVista.setVisible(false);
             controller.showWindow();
         }
     }

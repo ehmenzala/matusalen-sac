@@ -12,16 +12,20 @@ import book.model.Book;
 import admin.view.BookIdPrompt;
 import java.awt.event.ActionListener;
 import book.model.BookFetcher;
-
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import presentation.Welcome;
+import utilities.ControladorPrincipal;
 
 public class AdminController implements ActionListener {
+
+    DefaultTableModel model = new DefaultTableModel();
     private AdminManagement adminManagement;
     private AdminLogin vistaLogin;
     // Maybe we will modify this later.
     private BookShelf bs;
     private BookFetcher bf;
 
- 
     public AdminController(AdminLogin vistaLogin,
             AdminManagement adminManagement) {
         this.vistaLogin = vistaLogin;
@@ -31,6 +35,52 @@ public class AdminController implements ActionListener {
         this.bs = new BookShelf();
         this.bf = new BookFetcher();
         setActionListeners();
+    }
+
+    public void cargarLibros() {
+        
+        if (model.getColumnCount() == 0) {
+            ArrayList<Object> colum = new ArrayList<Object>();
+            colum.add("ID");
+            colum.add("Titulo");
+            colum.add("Autor");
+            colum.add("Género");
+            colum.add("N° Páginas");
+            colum.add("Año de publicación");
+            colum.add("Idioma");
+            colum.add("ISBN");
+            colum.add("Rating");
+
+            for (Object columna : colum) {
+                model.addColumn(columna);
+            }
+
+            adminManagement.tblLibros.setModel(model);
+        }
+
+        ArrayList<Book> books = bf.readAllBooks();
+
+        for (Book book : books) {
+            Object[] datos = new Object[]{
+                book.getId(),
+                book.getTitle(),
+                book.getAuthor(),
+                book.getGenre(),
+                book.getNumberOfPages(),
+                book.getPublishedDate(),
+                book.getLanguage(),
+                book.getIsbn(),
+                book.getRating()
+            };
+
+            model.addRow(datos);
+        }
+
+//        ArrayList<Object> books = new ArrayList<Object>();
+//        Object[] datos = new Object[]{1,"1","1","1",123,123,"1","1",3};
+//        
+//        model.addRow(datos);
+        adminManagement.tblLibros.setModel(model);
     }
 
     private void setActionListeners() {
@@ -82,11 +132,16 @@ public class AdminController implements ActionListener {
             bs.updateBook(new Book(id, title, author, genre,
                     numPages, publishedDate,
                     language, ISBN, rating, fragment));
+            
+            model.setRowCount(0);
+            cargarLibros();
         });
 
         adminManagement.onDeleteClick((e) -> {
             int bookId = Integer.parseInt(adminManagement.getId());
             bs.deleteBook(bookId);
+            model.setRowCount(0);
+            cargarLibros();
         });
 
         adminManagement.onAddClick((e) -> {
@@ -107,6 +162,8 @@ public class AdminController implements ActionListener {
                     numPages, publishedDate,
                     language, ISBN, rating, fragment);
             bs.addBook(bookToAdd);
+            model.setRowCount(0);
+            cargarLibros();
         });
 
         adminManagement.onCleanClick((e) -> {
@@ -120,6 +177,7 @@ public class AdminController implements ActionListener {
             adminManagement.setNumPaginas("");
             adminManagement.setAnio("");
             adminManagement.setRating("");
+            
         });
     }
 
@@ -151,15 +209,26 @@ public class AdminController implements ActionListener {
 
                 aw.btnEntrar.addActionListener((event) -> {
                     iniciarAdminManagement();
+                    cargarLibros();
                     aw.setVisible(false);
                 });
             } else {
                 System.out.println("USUARIO O CONTRASEÑA INCORRECTA");
             }
-        } 
-        
+        }
+
         if (e.getSource() == vistaLogin.btnRegresar) {
-            System.out.println("hola");
+            iniciarVentanaPrincipal();
+            vistaLogin.setVisible(false);
         }
     }
+
+    public void iniciarVentanaPrincipal() {
+        Welcome w = new Welcome();
+        w.setTitle("PANTALLA DE INICIO");
+        w.setVisible(true);
+        w.setLocationRelativeTo(null);
+        ControladorPrincipal cp = new ControladorPrincipal(w);
+    }
+
 }

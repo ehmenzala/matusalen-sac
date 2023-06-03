@@ -48,13 +48,14 @@ public class AdminLogin extends javax.swing.JFrame {
 
         btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(202, 164, 43));
+        btnRegresar.setText("Regresar");
         btnRegresar.setBorder(null);
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 50));
         jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 30, 30));
 
         txtNombre.setBackground(new java.awt.Color(0, 0, 0));
         txtNombre.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombre.setText("Esteban");
         txtNombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +67,6 @@ public class AdminLogin extends javax.swing.JFrame {
 
         txtCorreo.setBackground(new java.awt.Color(0, 0, 0));
         txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
-        txtCorreo.setText("correo@correo.com");
         txtCorreo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +100,6 @@ public class AdminLogin extends javax.swing.JFrame {
 
         pswContraseña.setBackground(new java.awt.Color(0, 0, 0));
         pswContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        pswContraseña.setText("micontra");
         pswContraseña.setBorder(null);
         jPanel2.add(pswContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 210, 40));
         jPanel2.add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 30, 30));

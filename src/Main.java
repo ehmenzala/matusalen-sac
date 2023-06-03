@@ -5,6 +5,7 @@ import admin.view.AdminManagement;
 import book.controller.MainWindowController;
 import book.model.BookShelf;
 import book.view.MainWindow;
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import presentation.Welcome;
 import utilities.ControladorPrincipal;
 
@@ -22,14 +23,12 @@ public class Main {
 //        controller.showWindow();
 //         AdminLogin}
         
+        AdminLogin vistaLogin = new AdminLogin();
+        AdminManagement adminManagement = new AdminManagement();
+                
         
-        
-        Welcome w = new Welcome();
-        w.setTitle("PANTALLA DE INICIO");
-        w.setVisible(true);
-        w.setLocationRelativeTo(null);
-        
-        ControladorPrincipal cp = new ControladorPrincipal(w);
+        AdminController ac = new AdminController(vistaLogin, adminManagement);
+        ac.iniciarVentanaPrincipal();
 
 
         

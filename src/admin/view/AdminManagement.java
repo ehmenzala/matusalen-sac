@@ -48,7 +48,7 @@ public class AdminManagement extends javax.swing.JFrame {
         lblBuscar = new javax.swing.JLabel();
         btnBuscarId = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblLibros = new javax.swing.JTable();
         lblFondo3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblFondoFrag = new javax.swing.JLabel();
@@ -220,19 +220,19 @@ public class AdminManagement extends javax.swing.JFrame {
         btnBuscarId.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jPanel2.add(btnBuscarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 140, 40));
 
-        jTable1.setAutoCreateRowSorter(true);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblLibros.setAutoCreateRowSorter(true);
+        tblLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Título", "Autor", "Editorial", "Año", "ISBN", "Género"
+                "ID", "Título", "Autor", "Gnero", "N° Páginas", "Año de publicación", "Idioma", "ISBN", "Rating"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblLibros);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 610, 210));
         jPanel2.add(lblFondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 7, 604, 300));
@@ -435,7 +435,6 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAgregar;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblEliminar;
@@ -445,6 +444,7 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JLabel lblLimpiar;
     private javax.swing.JLabel lblModificar;
     private javax.swing.JLabel lblZonaAdmin;
+    public javax.swing.JTable tblLibros;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtGenero;
