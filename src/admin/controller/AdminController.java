@@ -22,7 +22,6 @@ public class AdminController implements ActionListener {
     DefaultTableModel model = new DefaultTableModel();
     private AdminManagement adminManagement;
     private AdminLogin vistaLogin;
-    // Maybe we will modify this later.
     private BookShelf bs;
     private BookFetcher bf;
 
