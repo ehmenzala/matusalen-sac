@@ -76,7 +76,7 @@ public class BookDetail extends javax.swing.JFrame {
         jPanel2.add(lblFragmento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 160, 20));
 
         textArea.setColumns(20);
-        textArea.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        textArea.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
