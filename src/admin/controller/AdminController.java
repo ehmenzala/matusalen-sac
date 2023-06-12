@@ -10,20 +10,22 @@ import admin.view.AdminManagement;
 import book.model.BookShelf;
 import book.model.Book;
 import admin.view.BookIdPrompt;
+import admin.view.DeleteBookPrompt;
 import java.awt.event.ActionListener;
 import book.model.BookFetcher;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import presentation.Welcome;
 import utilities.ControladorPrincipal;
 
 public class AdminController implements ActionListener {
 
+    private final AdminManagement adminManagement;
+    private final AdminLogin vistaLogin;
+    private final BookShelf bs;
+    private final BookFetcher bf;
     DefaultTableModel model = new DefaultTableModel();
-    private AdminManagement adminManagement;
-    private AdminLogin vistaLogin;
-    private BookShelf bs;
-    private BookFetcher bf;
 
     public AdminController(AdminLogin vistaLogin,
             AdminManagement adminManagement) {
@@ -37,7 +39,7 @@ public class AdminController implements ActionListener {
     }
 
     public void cargarLibros() {
-        
+
         if (model.getColumnCount() == 0) {
             ArrayList<Object> colum = new ArrayList<Object>();
             colum.add("ID");
@@ -75,26 +77,74 @@ public class AdminController implements ActionListener {
             model.addRow(datos);
         }
 
-//        ArrayList<Object> books = new ArrayList<Object>();
-//        Object[] datos = new Object[]{1,"1","1","1",123,123,"1","1",3};
-//        
-//        model.addRow(datos);
         adminManagement.tblLibros.setModel(model);
+    }
+
+    private boolean losCamposEstanCompletos() {
+        String title = adminManagement.getTitulo();
+        String author = adminManagement.getAutor();
+        String genre = adminManagement.getGenero();
+        String language = adminManagement.getIdioma();
+        String ISBN = adminManagement.getISBN();
+        String fragment = adminManagement.getFragmento();
+        String numPagesString = adminManagement.getNumPaginas();
+        String publishedDateString = adminManagement.getAnio();
+        String ratingString = adminManagement.getRating();
+
+        // Verificar si algún campo está vacío
+        if (title.isEmpty() || author.isEmpty() || genre.isEmpty() || language.isEmpty()
+                || ISBN.isEmpty() || fragment.isEmpty() || numPagesString.isEmpty()
+                || publishedDateString.isEmpty() || ratingString.isEmpty()) {
+            return false; // Al menos un campo está vacío
+        }
+
+        return true; // Todos los campos están completos
+    }
+
+    private boolean losCamposNumericosSonValidos() {
+
+        String numPagesString = adminManagement.getNumPaginas();
+        String publishedDateString = adminManagement.getAnio();
+        String ratingString = adminManagement.getRating();
+
+        try {
+            Integer.parseInt(numPagesString);
+            Integer.parseInt(publishedDateString);
+        } catch (NumberFormatException e) {
+            return false; // Al menos uno de los campos no es un número válido
+        }
+
+        return true; // Todos los campos numéricos válidos
+    }
+
+    private boolean ratingEstaDentroDeRango() {
+        String ratingString = adminManagement.getRating();
+        int rating = Integer.parseInt(ratingString);
+        return !(rating < 1 || rating > 5);
     }
 
     private void setActionListeners() {
 
         adminManagement.onSearchByIdClick((e) -> {
-            // Aquí tiene que abrirse la ventana que pregunta por el ID
-            // Y luego, de alguna manera, recuperar la ID que insertó el usuario
+
             BookIdPrompt bip = new BookIdPrompt();
             bip.setVisible(true);
             bip.setLocationRelativeTo(null);
 
             bip.btnOK.addActionListener((ev) -> {
-                String a = bip.txtID.getText();
-                int id = Integer.parseInt(a);
+                String idInput = bip.txtID.getText();
 
+                // Validar si el campo de ID está vacío o no es un número
+                if (idInput.isEmpty() || !idInput.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null,
+                            "Ingresa un valor numérico válido. Ej: 25",
+                            "Error: ID inválido",
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                    return;
+                }
+
+                int id = Integer.parseInt(idInput);
                 Book foundBook = bs.getBook(id);
 
                 adminManagement.setTitulo(foundBook.getTitle());
@@ -108,61 +158,121 @@ public class AdminController implements ActionListener {
                 adminManagement.setAnio(String.valueOf(foundBook.getPublishedDate()));
                 adminManagement.setRating(String.valueOf(foundBook.getRating()));
                 bip.setVisible(false);
+                JOptionPane.showMessageDialog(null, "ID Encontrado\nPuede hacer modificaciones.");
             });
 
             bip.btnCancelar.addActionListener((ev) -> {
-                System.out.println("cancelado");
                 bip.setVisible(false);
             });
         });
 
         adminManagement.onModifyClick((e) -> {
-            String title = adminManagement.getTitulo();
-            String author = adminManagement.getAutor();
-            String genre = adminManagement.getGenero();
-            String language = adminManagement.getIdioma();
-            String ISBN = adminManagement.getISBN();
-            String fragment = adminManagement.getFragmento();
-            int id = Integer.parseInt(adminManagement.getId());
-            int numPages = Integer.parseInt(adminManagement.getNumPaginas());
-            int publishedDate = Integer.parseInt(adminManagement.getAnio());
-            int rating = Integer.parseInt(adminManagement.getRating());
+            if (losCamposEstanCompletos() && losCamposNumericosSonValidos() && ratingEstaDentroDeRango() && !adminManagement.getId().isEmpty()) {
+                String title = adminManagement.getTitulo();
+                String author = adminManagement.getAutor();
+                String genre = adminManagement.getGenero();
+                String language = adminManagement.getIdioma();
+                String ISBN = adminManagement.getISBN();
+                String fragment = adminManagement.getFragmento();
+                int id = Integer.parseInt(adminManagement.getId());
+                int numPages = Integer.parseInt(adminManagement.getNumPaginas());
+                int publishedDate = Integer.parseInt(adminManagement.getAnio());
+                int rating = Integer.parseInt(adminManagement.getRating());
 
-            bs.updateBook(new Book(id, title, author, genre,
-                    numPages, publishedDate,
-                    language, ISBN, rating, fragment));
-            
-            model.setRowCount(0);
-            cargarLibros();
+                bs.updateBook(new Book(id, title, author, genre,
+                        numPages, publishedDate,
+                        language, ISBN, rating, fragment));
+
+                model.setRowCount(0);
+                cargarLibros();
+            } else {
+                String errorMessage = "";
+
+                if (adminManagement.getId().isEmpty()) {
+                    errorMessage += "El ID está vacío. Por favor haga clic en el botón BUSCAR ID.\nAsí podrá modificar un libro existente.";
+                    JOptionPane.showMessageDialog(null, errorMessage, "Error: Verifique el ingreso de datos", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                if (!losCamposEstanCompletos()) {
+                    errorMessage += "Hay campos vacíos existentes.\n";
+                }
+
+                if (!losCamposNumericosSonValidos()) {
+                    errorMessage += "Algunos campos numéricos no son válidos.\n";
+                } else if (!ratingEstaDentroDeRango()) {
+                    errorMessage += "Verifique que el rating esté entre 1 y 5.";
+                }
+
+                JOptionPane.showMessageDialog(null, errorMessage, "Error: Verifique el ingreso de datos", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
         adminManagement.onDeleteClick((e) -> {
-            int bookId = Integer.parseInt(adminManagement.getId());
-            bs.deleteBook(bookId);
-            model.setRowCount(0);
-            cargarLibros();
+            DeleteBookPrompt bdp = new DeleteBookPrompt();
+            bdp.setVisible(true);
+            bdp.setLocationRelativeTo(null);
+
+            bdp.btnOK.addActionListener((ev) -> {
+                String idInput = bdp.txtID.getText();
+
+                // Validar si el campo de ID está vacío o no es un número
+                if (idInput.isEmpty() || !idInput.matches("\\d+")) {
+                    JOptionPane.showMessageDialog(null,
+                            "Ingresa un valor numérico válido. Ej: 25",
+                            "Error: ID inválido",
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                    return;
+                }
+
+                int bookId = Integer.parseInt(adminManagement.getId());
+                bs.deleteBook(bookId);
+                model.setRowCount(0);
+                cargarLibros();
+            });
+
+            bdp.btnCancelar.addActionListener((ev) -> {
+                bdp.setVisible(false);
+            });
+
         });
 
         adminManagement.onAddClick((e) -> {
-            String title = adminManagement.getTitulo();
-            String author = adminManagement.getAutor();
-            String genre = adminManagement.getGenero();
-            String language = adminManagement.getIdioma();
-            String ISBN = adminManagement.getISBN();
-            String fragment = adminManagement.getFragmento();
-            int numPages = Integer.parseInt(adminManagement.getNumPaginas());
-            int publishedDate = Integer.parseInt(adminManagement.getAnio());
-            int rating = Integer.parseInt(adminManagement.getRating());
-            int id = bf.createNewId();
+            if (losCamposEstanCompletos() && losCamposNumericosSonValidos() && ratingEstaDentroDeRango()) {
+                String title = adminManagement.getTitulo();
+                String author = adminManagement.getAutor();
+                String genre = adminManagement.getGenero();
+                String language = adminManagement.getIdioma();
+                String ISBN = adminManagement.getISBN();
+                String fragment = adminManagement.getFragmento();
+                int numPages = Integer.parseInt(adminManagement.getNumPaginas());
+                int publishedDate = Integer.parseInt(adminManagement.getAnio());
+                int rating = Integer.parseInt(adminManagement.getRating());
+                int id = bf.createNewId();
 
-            // Modificar numero de pagina
-            Book bookToAdd = new Book(
-                    id, title, author, genre,
-                    numPages, publishedDate,
-                    language, ISBN, rating, fragment);
-            bs.addBook(bookToAdd);
-            model.setRowCount(0);
-            cargarLibros();
+                Book bookToAdd = new Book(
+                        id, title, author, genre,
+                        numPages, publishedDate,
+                        language, ISBN, rating, fragment);
+                bs.addBook(bookToAdd);
+                model.setRowCount(0);
+                cargarLibros();
+            } else {
+                String errorMessage = "";
+
+                if (!losCamposEstanCompletos()) {
+                    errorMessage += "Hay campos vacíos existentes.\n";
+                }
+
+                if (!losCamposNumericosSonValidos()) {
+                    errorMessage += "Algunos campos numéricos no son válidos.\n";
+                } else if (!ratingEstaDentroDeRango()) {
+                    errorMessage += "Verifique que el rating esté entre 1 y 5.";
+                }
+
+                JOptionPane.showMessageDialog(null, errorMessage, "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
         adminManagement.onCleanClick((e) -> {
@@ -176,7 +286,7 @@ public class AdminController implements ActionListener {
             adminManagement.setNumPaginas("");
             adminManagement.setAnio("");
             adminManagement.setRating("");
-            
+
         });
     }
 

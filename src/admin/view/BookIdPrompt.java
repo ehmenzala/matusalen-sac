@@ -1,14 +1,11 @@
 package admin.view;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import utilities.MetodoGeneral;
 
 public class BookIdPrompt extends javax.swing.JFrame {
 
     public BookIdPrompt() {
         initComponents();
-//        colocarImagen(lblfondo, "./src/images/Biblioteca.jpg");
         MetodoGeneral.colocarImagen(lblLIBRO, "./src/images/libro.png");
     }
 
@@ -46,7 +43,7 @@ public class BookIdPrompt extends javax.swing.JFrame {
         btnOK.setForeground(new java.awt.Color(255, 255, 255));
         btnOK.setText("OK");
         btnOK.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 70, 30));
+        jPanel1.add(btnOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 70, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -77,7 +74,6 @@ public class BookIdPrompt extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -99,15 +95,6 @@ public class BookIdPrompt extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BookIdPrompt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookIdPrompt().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
