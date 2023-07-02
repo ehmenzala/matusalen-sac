@@ -24,6 +24,7 @@ public class AdminWelcome extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblAdminWelcome = new javax.swing.JLabel();
         btnEntrar = new javax.swing.JButton();
+        btnSolicitudes = new javax.swing.JButton();
         lblLibrosImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -57,13 +58,22 @@ public class AdminWelcome extends javax.swing.JFrame {
         jPanel1.add(lblAdminWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 310, 30));
 
         btnEntrar.setBackground(new java.awt.Color(255, 255, 51));
-        btnEntrar.setText("ENTRAR");
+        btnEntrar.setText("PANEL ADMINISTRACIÓN");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
+        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        btnSolicitudes.setBackground(new java.awt.Color(255, 255, 51));
+        btnSolicitudes.setText("SOLICITUDES");
+        btnSolicitudes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitudesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         lblLibrosImg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(lblLibrosImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 330));
@@ -81,8 +91,13 @@ public class AdminWelcome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseExited
 
+    private void btnSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitudesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSolicitudesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnEntrar;
+    public javax.swing.JButton btnSolicitudes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
