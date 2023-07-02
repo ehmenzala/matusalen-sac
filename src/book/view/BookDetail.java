@@ -38,6 +38,7 @@ public class BookDetail extends javax.swing.JFrame {
     
 
     @SuppressWarnings("unchecked")
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -61,6 +62,7 @@ public class BookDetail extends javax.swing.JFrame {
         lblCisbn = new javax.swing.JLabel();
         lblCanio = new javax.swing.JLabel();
         lblStar = new javax.swing.JLabel();
+        btnSolicitar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -159,6 +161,11 @@ public class BookDetail extends javax.swing.JFrame {
         lblStar.setForeground(new java.awt.Color(255, 255, 255));
         lblStar.setText("X");
         jPanel3.add(lblStar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 20, 20));
+
+        btnSolicitar.setBackground(new java.awt.Color(0, 0, 0));
+        btnSolicitar.setForeground(new java.awt.Color(255, 255, 51));
+        btnSolicitar.setText("SOLICITAR");
+        jPanel3.add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 110, 40));
         jPanel3.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
@@ -167,6 +174,7 @@ public class BookDetail extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnSolicitar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
