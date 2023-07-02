@@ -11,9 +11,6 @@ import java.util.List;
 public class BookFetcher {
     
     private final String FILE_PATH = "./src/db/books.psv";
-
-    public BookFetcher() {
-    }
     
     public int createNewId() {
         int maxNumber = 0;
