@@ -13,7 +13,10 @@ public class BookDetail extends javax.swing.JFrame {
     
     public BookDetail(Book book) {
         initComponents();
-        
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
         
