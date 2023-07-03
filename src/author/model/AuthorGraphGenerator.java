@@ -15,11 +15,11 @@ public class AuthorGraphGenerator {
         this.authors = new HashMap<>();
         fillGraphData();
     }
-
-    public static void main(String[] args) {
-        
-    }
     
+    public void addAuthor(String authorName, ArrayList<String> collabs) {
+        authors.put(authorName, collabs);
+    }
+
     public void readGraphData() {
         for (String author : authors.keySet()) {
             System.out.println("# " + author);
