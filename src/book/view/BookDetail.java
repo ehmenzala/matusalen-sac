@@ -1,7 +1,7 @@
 
 package book.view;
 //librerias
-import book.controller.BookDetailController;
+
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -19,7 +19,6 @@ public class BookDetail extends javax.swing.JFrame {
         
         initComponents();
         setLocationRelativeTo(null);
-       
         
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
@@ -40,6 +39,8 @@ public class BookDetail extends javax.swing.JFrame {
         lblCrating.setText(String.valueOf(book.getRating()));
         //el fragmento
         textArea.setText(book.getFragment());
+        //boton           
+       
         
     }
     
@@ -172,6 +173,11 @@ public class BookDetail extends javax.swing.JFrame {
         btnSolicitar.setBackground(new java.awt.Color(0, 0, 0));
         btnSolicitar.setForeground(new java.awt.Color(255, 255, 51));
         btnSolicitar.setText("SOLICITAR");
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 110, 40));
         jPanel3.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 470));
 
@@ -179,6 +185,10 @@ public class BookDetail extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+       
+    }//GEN-LAST:event_btnSolicitarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnSolicitar;

@@ -6,6 +6,7 @@ package book.view;
 
 import utilities.MetodoGeneral;
 import book.model.Book;
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -36,7 +37,7 @@ public class RequestDetails extends javax.swing.JFrame {
         
     }
 
-    public RequestDetails() {
+    public RequestDetails(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -92,6 +93,11 @@ public class RequestDetails extends javax.swing.JFrame {
         btnRegistrarDni.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btnRegistrarDni.setForeground(new java.awt.Color(0, 204, 102));
         btnRegistrarDni.setText("REGISTRAR");
+        btnRegistrarDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarDniActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegistrarDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -202,6 +208,10 @@ public class RequestDetails extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarDniActionPerformed
+        javax.swing.JOptionPane.showMessageDialog(this, "Solicitud Registrada con Exito");
+    }//GEN-LAST:event_btnRegistrarDniActionPerformed
 
     /**
      * @param args the command line arguments
