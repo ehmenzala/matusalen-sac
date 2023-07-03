@@ -59,3 +59,4 @@ public class MainWindowController {
         JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
     }
 }
+  

@@ -1,21 +1,25 @@
 
 package book.view;
 //librerias
+import book.controller.BookDetailController;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import book.model.Book;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import utilities.MetodoGeneral;
 
 
 public class BookDetail extends javax.swing.JFrame {
     
+    
     public BookDetail(Book book) {
-        initComponents();
         
+        initComponents();
         setLocationRelativeTo(null);
-        setVisible(true);
+       
         
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
