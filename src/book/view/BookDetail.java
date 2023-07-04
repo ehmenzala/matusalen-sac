@@ -2,24 +2,18 @@
 package book.view;
 //librerias
 
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import book.model.Book;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import utilities.MetodoGeneral;
+import book.view.RequestDetails;
 
 
 public class BookDetail extends javax.swing.JFrame {
-    
-    
+
     public BookDetail(Book book) {
         
         initComponents();
-        setLocationRelativeTo(null);
-        
+        this.setLocationRelativeTo(null);
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
         MetodoGeneral.colocarImagen(lblStar, "./src/images/estrella-amar.png");
         
@@ -40,13 +34,13 @@ public class BookDetail extends javax.swing.JFrame {
         //el fragmento
         textArea.setText(book.getFragment());
         //boton           
-       
-        
     }
     
+    public void onSolicitarClick(ActionListener listener) {
+        btnSolicitar.addActionListener(listener);
+    }
 
     @SuppressWarnings("unchecked")
-    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -187,7 +181,7 @@ public class BookDetail extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
-       
+        
     }//GEN-LAST:event_btnSolicitarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

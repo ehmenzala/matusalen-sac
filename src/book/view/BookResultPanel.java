@@ -5,8 +5,11 @@ import java.awt.Font;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle;
+import utilities.SolicitudFetcher;
+import utilities.Solicitud;
 
 public class BookResultPanel extends JPanel {
 
@@ -43,9 +46,27 @@ public class BookResultPanel extends JPanel {
         resultTitle.setText(book.getTitle());
         resultAuthor.setFont(new Font("sansserif", 2, 14));
         resultAuthor.setText(book.getAuthor());
+        RequestDetails regisSoli = new RequestDetails(book);
+
+        // Setup book detail view
+        BookDetail bookDetail = new BookDetail(book);
+        bookDetail.onSolicitarClick((e) -> {
+            regisSoli.setVisible(true);
+            bookDetail.setVisible(false);
+            
+        });
         
-        // Opens the detail view for the book
-        resultBtn.addActionListener((e) -> new BookDetail(book).setVisible(true));
+        // Setup request details view
+        regisSoli.onRegistrarClick((e) -> {
+            SolicitudFetcher sf = new SolicitudFetcher();
+            Solicitud solicitud = new Solicitud(sf.createNewId(), book.getTitle(), "en proceso", regisSoli.txtDni.getText());
+            sf.createSolicitud(solicitud);
+            JOptionPane.showMessageDialog(null, "SOLICITUD REGISTRADA CON EXITO");
+            regisSoli.setVisible(false);
+        });
+        
+        // Open book detail when button clicked
+        resultBtn.addActionListener((e) -> bookDetail.setVisible(true));
 
         if (panelType == PanelType.LONG) {
             resultLayout.setHorizontalGroup(

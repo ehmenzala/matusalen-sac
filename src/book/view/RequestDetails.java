@@ -3,10 +3,10 @@ package book.view;
 import utilities.MetodoGeneral;
 import book.model.Book;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RequestDetails extends javax.swing.JFrame {
 
-    
     public RequestDetails(Book book) {
         initComponents();
         setLocationRelativeTo(null);
@@ -26,6 +26,10 @@ public class RequestDetails extends javax.swing.JFrame {
 
     public RequestDetails(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public void onRegistrarClick(ActionListener listener) {
+        btnRegistrarDni.addActionListener(listener);
     }
 
     @SuppressWarnings("unchecked")
@@ -192,7 +196,7 @@ public class RequestDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarDniActionPerformed
-        javax.swing.JOptionPane.showMessageDialog(this, "Solicitud Registrada con Exito");
+
     }//GEN-LAST:event_btnRegistrarDniActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
