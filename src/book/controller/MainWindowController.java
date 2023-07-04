@@ -27,16 +27,10 @@ public class MainWindowController {
     private void setActionListeners() {
 
         mainWindow.onSearchClick((e) -> {
-            System.out.println("Clcik en Search");
             BookQuery bq = new BookQuery(
                     mainWindow.getSearchType(),
                     mainWindow.getSearchTerm());
             searchResults = bookShelf.searchBook(bq);
-            System.out.println("# SEARCH RESULTS");
-            System.out.println("# SEARCH LENGHT: " + searchResults.length);
-            for (Book book : searchResults) {
-                System.out.println("> Title: " + book.getTitle());
-            }
             mainWindow.createResultItems(searchResults);
         });
 
