@@ -11,6 +11,7 @@ import book.model.BookShelf;
 import book.model.Book;
 import admin.view.BookIdPrompt;
 import admin.view.DeleteBookPrompt;
+import admin.view.GestionSolicitudes;
 import java.awt.event.ActionListener;
 import book.model.BookFetcher;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class AdminController implements ActionListener {
     private final AdminLogin vistaLogin;
     private final BookShelf bs;
     private final BookFetcher bf;
+    private final GestionSolicitudes PanelSolicitudes;
     DefaultTableModel model = new DefaultTableModel();
 
     public AdminController(AdminLogin vistaLogin,
@@ -35,6 +37,7 @@ public class AdminController implements ActionListener {
         this.vistaLogin.btnRegresar.addActionListener(this);
         this.bs = new BookShelf();
         this.bf = new BookFetcher();
+        this.PanelSolicitudes = new GestionSolicitudes();
         setActionListeners();
     }
 
@@ -295,6 +298,12 @@ public class AdminController implements ActionListener {
         adminManagement.setLocationRelativeTo(null);
         adminManagement.setVisible(true);
     }
+    
+    public void iniciarSolicitudes() {
+        PanelSolicitudes.setTitle("SOLICITUDES");
+        PanelSolicitudes.setLocationRelativeTo(null);
+        PanelSolicitudes.setVisible(true);
+    }
 
     public void iniciarLogin() {
         vistaLogin.setTitle("Iniciar Sesión");
@@ -316,9 +325,14 @@ public class AdminController implements ActionListener {
                 aw.lblAdminWelcome.setText("Bienvenido, " + as.getAdmin().getName());
                 vistaLogin.setVisible(false);
 
-                aw.btnEntrar.addActionListener((event) -> {
+                aw.btnPanelAdmin.addActionListener((event) -> {
                     iniciarAdminManagement();
                     cargarLibros();
+                    aw.setVisible(false);
+                });
+                
+                aw.btnSolicitudes.addActionListener((event) -> {
+                    iniciarSolicitudes();
                     aw.setVisible(false);
                 });
             } else {
