@@ -23,7 +23,7 @@ public class AdminWelcome extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblAdminWelcome = new javax.swing.JLabel();
-        btnEntrar = new javax.swing.JButton();
+        btnPanelAdmin = new javax.swing.JButton();
         btnSolicitudes = new javax.swing.JButton();
         lblLibrosImg = new javax.swing.JLabel();
 
@@ -57,14 +57,14 @@ public class AdminWelcome extends javax.swing.JFrame {
         lblAdminWelcome.setForeground(new java.awt.Color(255, 255, 0));
         jPanel1.add(lblAdminWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 310, 30));
 
-        btnEntrar.setBackground(new java.awt.Color(255, 255, 51));
-        btnEntrar.setText("PANEL ADMINISTRACIÓN");
-        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+        btnPanelAdmin.setBackground(new java.awt.Color(255, 255, 51));
+        btnPanelAdmin.setText("PANEL ADMINISTRACIÓN");
+        btnPanelAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrarActionPerformed(evt);
+                btnPanelAdminActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jPanel1.add(btnPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         btnSolicitudes.setBackground(new java.awt.Color(255, 255, 51));
         btnSolicitudes.setText("SOLICITUDES");
@@ -83,9 +83,9 @@ public class AdminWelcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+    private void btnPanelAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanelAdminActionPerformed
         
-    }//GEN-LAST:event_btnEntrarActionPerformed
+    }//GEN-LAST:event_btnPanelAdminActionPerformed
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
         // TODO add your handling code here:
@@ -96,7 +96,7 @@ public class AdminWelcome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSolicitudesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnEntrar;
+    public javax.swing.JButton btnPanelAdmin;
     public javax.swing.JButton btnSolicitudes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
