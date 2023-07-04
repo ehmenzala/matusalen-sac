@@ -1,20 +1,26 @@
 package book.controller;
 
+import author.model.AuthorGraphGenerator;
 import book.model.Book;
 import book.model.BookQuery;
 import book.model.BookShelf;
 import book.view.MainWindow;
+import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class MainWindowController {
 
-    private MainWindow mainWindow;
-    private BookShelf bookShelf;
+    private final MainWindow mainWindow;
+    private final BookShelf bookShelf;
+    private final AuthorGraphGenerator authorGraph;
     private Book[] searchResults = {};
 
-    public MainWindowController(MainWindow mainWindow, BookShelf bookShelf) {
+    public MainWindowController(MainWindow mainWindow, BookShelf bookShelf, AuthorGraphGenerator authorGraph) {
+        this.authorGraph = authorGraph;
         this.mainWindow = mainWindow;
         this.bookShelf = bookShelf;
+        loadAuthors();
         setActionListeners();
     }
 
@@ -47,6 +53,12 @@ public class MainWindowController {
             }
         });
         
+    }
+    
+    private void loadAuthors() {
+        JPanel authorsPanel = mainWindow.getAuthorsPanel();
+        authorsPanel.setLayout(new BoxLayout(authorsPanel, BoxLayout.Y_AXIS));;
+        authorGraph.displayGraphOnJPnael(authorsPanel);
     }
 
     private void showErrorMessage(String message, String title) {

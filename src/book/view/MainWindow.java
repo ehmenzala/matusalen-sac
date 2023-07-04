@@ -1,14 +1,11 @@
 package book.view;
 
 import book.model.Book;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import java.awt.Image;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.ParallelGroup;
 import javax.swing.GroupLayout.SequentialGroup;
+import javax.swing.JPanel;
 import utilities.MetodoGeneral;
 
 public class MainWindow extends javax.swing.JFrame {
@@ -56,7 +53,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         pnlTutorial = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        scrlHowToContainer = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -80,6 +77,14 @@ public class MainWindow extends javax.swing.JFrame {
         lblBtnBuscarImg = new javax.swing.JLabel();
         lblBtnOrdenarImg = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        pnlAuthors = new javax.swing.JPanel();
+        scrlAuthorsContainer = new javax.swing.JScrollPane();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        pnlAuthorsList = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -231,8 +236,8 @@ public class MainWindow extends javax.swing.JFrame {
         pnlTutorial.setBackground(new java.awt.Color(190, 219, 223));
         pnlTutorial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrlHowToContainer.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrlHowToContainer.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel2.setBackground(new java.awt.Color(212, 231, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -307,11 +312,54 @@ public class MainWindow extends javax.swing.JFrame {
         jPanel2.add(lblBtnOrdenarImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 700, 127, 46));
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 750, 170, 30));
 
-        jScrollPane1.setViewportView(jPanel2);
+        scrlHowToContainer.setViewportView(jPanel2);
 
-        pnlTutorial.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 420));
+        pnlTutorial.add(scrlHowToContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 420));
 
         jTabbedPane1.addTab("¿Cómo usar?", pnlTutorial);
+
+        pnlAuthors.setBackground(new java.awt.Color(249, 245, 255));
+        pnlAuthors.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(238, 235, 244));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Nuestros autores");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel35.setText("En esta sección encontrarás todos nuestros autores y las participaciones que han");
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 82, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel36.setText("tenido junto con otros.");
+        jPanel5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel37.setText("Autores y colaboradores");
+        jPanel5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        pnlAuthorsList.setBackground(new java.awt.Color(238, 235, 244));
+
+        javax.swing.GroupLayout pnlAuthorsListLayout = new javax.swing.GroupLayout(pnlAuthorsList);
+        pnlAuthorsList.setLayout(pnlAuthorsListLayout);
+        pnlAuthorsListLayout.setHorizontalGroup(
+            pnlAuthorsListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
+        );
+        pnlAuthorsListLayout.setVerticalGroup(
+            pnlAuthorsListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 880, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(pnlAuthorsList, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 580, 880));
+
+        scrlAuthorsContainer.setViewportView(jPanel5);
+
+        pnlAuthors.add(scrlAuthorsContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 410));
+
+        jTabbedPane1.addTab("Autores", pnlAuthors);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -357,7 +405,11 @@ public class MainWindow extends javax.swing.JFrame {
     public String getSearchType() {
         return ((String) cbxCriteria.getSelectedItem()).toLowerCase();
     }
-
+    
+    public JPanel getAuthorsPanel() {
+        return pnlAuthorsList;
+    }
+            
     public void createResultItems(Book[] books) {
         cleanResultEntries();
         
@@ -453,6 +505,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -461,7 +517,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblBtnBuscarImg;
@@ -469,12 +525,16 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel lblMiBusquedaImg;
     private javax.swing.JLabel lblOptionsImg;
     private javax.swing.JLabel lblWeAreHereImg;
+    private javax.swing.JPanel pnlAuthors;
+    private javax.swing.JPanel pnlAuthorsList;
     private javax.swing.JPanel pnlBuscar;
     private javax.swing.JPanel pnlNosotros;
     private javax.swing.JPanel pnlResults;
     private javax.swing.JPanel pnlTutorial;
     private javax.swing.JInternalFrame resultsFrame;
     private javax.swing.JScrollPane resultsScrollPane;
+    private javax.swing.JScrollPane scrlAuthorsContainer;
+    private javax.swing.JScrollPane scrlHowToContainer;
     private javax.swing.JTextField txtSearchBox;
     // End of variables declaration//GEN-END:variables
 }

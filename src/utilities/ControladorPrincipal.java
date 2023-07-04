@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import admin.view.*;
 import admin.controller.*;
+import author.model.AuthorGraphGenerator;
 import book.controller.MainWindowController;
 import book.model.BookShelf;
 import book.view.*;
@@ -33,11 +34,10 @@ public class ControladorPrincipal implements ActionListener {
         }
 
         if (e.getSource() == mainVista.btnEntrar) {
-            MainWindow mw = new MainWindow();
             MainWindow mainWindow = new MainWindow();
             BookShelf bs = new BookShelf();
-            MainWindowController controller = new MainWindowController(mainWindow, bs);
-//            mainVista.setVisible(false);
+            AuthorGraphGenerator authorGraph = new AuthorGraphGenerator();
+            MainWindowController controller = new MainWindowController(mainWindow, bs, authorGraph);
             controller.showWindow();
         }
     }
