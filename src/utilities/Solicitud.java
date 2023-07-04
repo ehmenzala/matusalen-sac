@@ -5,11 +5,13 @@ public class Solicitud {
     private int id;
     private String titulo;
     private String estado;
+    private String dni;
 
-    public Solicitud(int id, String titulo, String estado) {
+    public Solicitud(int id, String titulo, String estado, String dni) {
         this.id = id;
         this.titulo = titulo;
         this.estado = estado;
+        this.dni = dni;
     }
 
     public int getId() {
@@ -24,4 +26,7 @@ public class Solicitud {
         return estado;
     }
     
+    public String getDNI() {
+        return dni;
+    }
 }

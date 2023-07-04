@@ -71,8 +71,8 @@ public class SolicitudFetcher {
     }
     
     private String getSolicitudDataString(Solicitud solicitud) {
-        return String.format("%d|%s|%s",
-                solicitud.getId(), solicitud.getTitulo(), solicitud.getEstado());
+        return String.format("%d|%s|%s|%s",
+                solicitud.getId(), solicitud.getTitulo(), solicitud.getEstado(), solicitud.getDNI());
     }
     
     private Solicitud parseSolicitudData(String solicitudData) {
@@ -80,8 +80,9 @@ public class SolicitudFetcher {
         int id = Integer.parseInt(parts[0]);
         String titulo = parts[1];
         String estado = parts[2];
+        String dni = parts[3];
 
-        return new Solicitud(id, titulo, estado);
+        return new Solicitud(id, titulo, estado, dni);
     }
     
     
