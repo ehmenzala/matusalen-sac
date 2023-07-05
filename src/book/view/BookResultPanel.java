@@ -59,7 +59,7 @@ public class BookResultPanel extends JPanel {
         // Setup request details view
         regisSoli.onRegistrarClick((e) -> {
             SolicitudFetcher sf = new SolicitudFetcher();
-            Solicitud solicitud = new Solicitud(sf.createNewId(), book.getTitle(), "en proceso", regisSoli.txtDni.getText());
+            Solicitud solicitud = new Solicitud(sf.createNewId(), book.getTitle(), "En espera", regisSoli.txtDni.getText());
             sf.createSolicitud(solicitud);
             JOptionPane.showMessageDialog(null, "SOLICITUD REGISTRADA CON EXITO");
             regisSoli.setVisible(false);
