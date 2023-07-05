@@ -21,7 +21,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnProcesar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSolicitudes = new javax.swing.JTable();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +72,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         });
         jPanel1.add(btnProcesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 150, 40));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSolicitudes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -83,7 +83,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblSolicitudes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 560, 240));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 630, 500));
@@ -119,9 +119,9 @@ public class GestionSolicitudes extends javax.swing.JFrame {
     public javax.swing.JButton btnProcesar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblSolidelibros;
+    public javax.swing.JTable tblSolicitudes;
     public javax.swing.JTextField txtID;
     public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

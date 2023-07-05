@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import presentation.Welcome;
-import utilities.ControladorPrincipal;
+import utilities.*;
 
 public class AdminController implements ActionListener {
 
@@ -27,8 +27,11 @@ public class AdminController implements ActionListener {
     private final BookShelf bs;
     private final BookFetcher bf;
     private final GestionSolicitudes PanelSolicitudes;
+    private final SolicitudFetcher sf;
+    
     DefaultTableModel model = new DefaultTableModel();
-
+    DefaultTableModel model2 = new DefaultTableModel();
+    
     public AdminController(AdminLogin vistaLogin,
             AdminManagement adminManagement) {
         this.vistaLogin = vistaLogin;
@@ -37,6 +40,7 @@ public class AdminController implements ActionListener {
         this.vistaLogin.btnRegresar.addActionListener(this);
         this.bs = new BookShelf();
         this.bf = new BookFetcher();
+        this.sf = new SolicitudFetcher();
         this.PanelSolicitudes = new GestionSolicitudes();
         setActionListeners();
     }
@@ -82,7 +86,39 @@ public class AdminController implements ActionListener {
 
         adminManagement.tblLibros.setModel(model);
     }
+    
+    public void cargarSolicitudes() {
 
+        if (model2.getColumnCount() == 0) {
+            ArrayList<Object> colum = new ArrayList<Object>();
+            colum.add("ID");
+            colum.add("Titulo");
+            colum.add("Estado");
+            colum.add("DNI");
+
+            for (Object columna : colum) {
+                model2.addColumn(columna);
+            }
+
+            PanelSolicitudes.tblSolicitudes.setModel(model2);
+        }
+
+        ArrayList<Solicitud> solicitudes = sf.readAllSolicitudes();
+
+        for (Solicitud solicitud : solicitudes) {
+            Object[] DatoSolis = new Object[]{
+                solicitud.getId(),
+                solicitud.getTitulo(),
+                solicitud.getEstado(),
+                solicitud.getDNI()
+            };
+
+            model2.addRow(DatoSolis);
+        }
+
+        PanelSolicitudes.tblSolicitudes.setModel(model2);
+    }
+    
     private boolean losCamposEstanCompletos() {
         String title = adminManagement.getTitulo();
         String author = adminManagement.getAutor();
@@ -333,6 +369,7 @@ public class AdminController implements ActionListener {
                 
                 aw.btnSolicitudes.addActionListener((event) -> {
                     iniciarSolicitudes();
+                    cargarSolicitudes();
                     aw.setVisible(false);
                 });
             } else {
