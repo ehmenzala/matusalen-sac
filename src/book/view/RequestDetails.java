@@ -67,6 +67,7 @@ public class RequestDetails extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtDni.setBackground(new java.awt.Color(36, 35, 35));
+        txtDni.setForeground(new java.awt.Color(255, 255, 255));
         txtDni.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
         jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, 60));
 
