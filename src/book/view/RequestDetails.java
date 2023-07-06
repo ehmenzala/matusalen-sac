@@ -177,7 +177,7 @@ public class RequestDetails extends javax.swing.JFrame {
         lblRating.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
         lblRating.setForeground(new java.awt.Color(255, 255, 0));
         lblRating.setText("CALIFICACIÓN :");
-        jPanel2.add(lblRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 150, 20));
+        jPanel2.add(lblRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 80, 20));
 
         lblStar.setBackground(new java.awt.Color(0, 255, 204));
         lblStar.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
@@ -187,7 +187,7 @@ public class RequestDetails extends javax.swing.JFrame {
 
         lblCrating.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblCrating.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(lblCrating, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 20, 20));
+        jPanel2.add(lblCrating, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 20, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 230, 310));
 
