@@ -1,5 +1,6 @@
 package admin.view;
 
+import java.awt.event.ActionListener;
 import utilities.MetodoGeneral;
 
 public class GestionSolicitudes extends javax.swing.JFrame {
@@ -17,7 +18,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblSolidelibros = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
+        txtTitulo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnProcesar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -40,15 +41,15 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         txtID.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 1, 14), new java.awt.Color(255, 255, 51))); // NOI18N
         jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 60, 60));
 
-        txtNombre.setBackground(new java.awt.Color(0, 0, 0));
-        txtNombre.setForeground(new java.awt.Color(255, 255, 51));
-        txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LIBRO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtTitulo.setBackground(new java.awt.Color(0, 0, 0));
+        txtTitulo.setForeground(new java.awt.Color(255, 255, 51));
+        txtTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LIBRO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        txtTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
+                txtTituloActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, 60));
+        jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, 60));
 
         btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
         btnBuscar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
@@ -93,19 +94,26 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    }//GEN-LAST:event_txtTituloActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
-      javax.swing.JOptionPane.showMessageDialog(this, "Solicitud procesada");
+
     }//GEN-LAST:event_btnProcesarActionPerformed
 
- 
+    public void buscarPorID(ActionListener listener) {
+        btnBuscar.addActionListener(listener);
+    }
+    
+    public void ProcesarSolicitud(ActionListener listener) {
+        btnProcesar.addActionListener(listener);
+    }
+    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -123,6 +131,6 @@ public class GestionSolicitudes extends javax.swing.JFrame {
     private javax.swing.JLabel lblSolidelibros;
     public javax.swing.JTable tblSolicitudes;
     public javax.swing.JTextField txtID;
-    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

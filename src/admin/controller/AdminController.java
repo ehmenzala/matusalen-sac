@@ -28,10 +28,10 @@ public class AdminController implements ActionListener {
     private final BookFetcher bf;
     private final GestionSolicitudes PanelSolicitudes;
     private final SolicitudFetcher sf;
-    
+
     DefaultTableModel model = new DefaultTableModel();
     DefaultTableModel model2 = new DefaultTableModel();
-    
+
     public AdminController(AdminLogin vistaLogin,
             AdminManagement adminManagement) {
         this.vistaLogin = vistaLogin;
@@ -86,8 +86,9 @@ public class AdminController implements ActionListener {
 
         adminManagement.tblLibros.setModel(model);
     }
-    
+
     public void cargarSolicitudes() {
+        
 
         if (model2.getColumnCount() == 0) {
             ArrayList<Object> colum = new ArrayList<Object>();
@@ -118,7 +119,7 @@ public class AdminController implements ActionListener {
 
         PanelSolicitudes.tblSolicitudes.setModel(model2);
     }
-    
+
     private boolean losCamposEstanCompletos() {
         String title = adminManagement.getTitulo();
         String author = adminManagement.getAutor();
@@ -327,6 +328,26 @@ public class AdminController implements ActionListener {
             adminManagement.setRating("");
 
         });
+
+        PanelSolicitudes.buscarPorID((e) -> {
+            String idInput = PanelSolicitudes.txtID.getText();
+
+            int id = Integer.parseInt(idInput);
+            String titulo = buscarTituloPorID(id);
+
+            if (titulo != null) {
+                PanelSolicitudes.txtTitulo.setText(titulo);
+            } else {
+                PanelSolicitudes.txtTitulo.setText("");
+            }
+        });
+
+        PanelSolicitudes.ProcesarSolicitud((e) -> {
+            int idInput = Integer.parseInt(PanelSolicitudes.txtID.getText());
+            
+            procesarSoli(idInput);
+            
+        });
     }
 
     public void iniciarAdminManagement() {
@@ -334,7 +355,7 @@ public class AdminController implements ActionListener {
         adminManagement.setLocationRelativeTo(null);
         adminManagement.setVisible(true);
     }
-    
+
     public void iniciarSolicitudes() {
         PanelSolicitudes.setTitle("SOLICITUDES");
         PanelSolicitudes.setLocationRelativeTo(null);
@@ -345,6 +366,35 @@ public class AdminController implements ActionListener {
         vistaLogin.setTitle("Iniciar Sesión");
         vistaLogin.setLocationRelativeTo(null);
         vistaLogin.setVisible(true);
+    }
+
+    private void procesarSoli(int id) {
+        
+        for (int i = 0; i < model2.getRowCount(); i++) {
+            int solicitudID = (int) model2.getValueAt(i, 0);
+            if (solicitudID == id) {
+                
+                if (model2.getValueAt(i, 2).equals("Procesado")) {
+                    JOptionPane.showMessageDialog(null, "Esta solicitud ya está procesada");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Solicitud Procesada");
+                    Solicitud solis = new Solicitud(solicitudID, (String) (model2.getValueAt(i, 1)), "Procesado" , (String) model2.getValueAt(i, 3));
+                    sf.updateSolicitud(solis);
+                    model2.setRowCount(0);
+                    cargarSolicitudes();
+                }          
+            }
+        }
+    }
+
+    private String buscarTituloPorID(int id) {
+        for (int i = 0; i < model2.getRowCount(); i++) {
+            int solicitudID = (int) model2.getValueAt(i, 0);
+            if (solicitudID == id) {
+                return (String) model2.getValueAt(i, 1);
+            }
+        }
+        return null;
     }
 
     @Override
@@ -366,7 +416,7 @@ public class AdminController implements ActionListener {
                     cargarLibros();
                     aw.setVisible(false);
                 });
-                
+
                 aw.btnSolicitudes.addActionListener((event) -> {
                     iniciarSolicitudes();
                     cargarSolicitudes();
