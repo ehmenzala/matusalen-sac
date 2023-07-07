@@ -59,6 +59,20 @@ public class SolicitudFetcher {
         return solicitudes;
     }
     
+    public void updateSolicitud(Solicitud updatedSolicitud) {
+        List<Solicitud> solicitudes = readAllSolicitudes();
+
+        for (int i = 0; i < solicitudes.size(); i++) {
+            Solicitud solicitud = solicitudes.get(i);
+            if (solicitud.getId() == updatedSolicitud.getId()) {
+                solicitudes.set(i, updatedSolicitud);
+                break;
+            }
+        }
+
+        saveAllSolicitudes(solicitudes);
+    }
+    
     private void saveAllSolicitudes(List<Solicitud> solicitudes) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {
             for (Solicitud solicitud : solicitudes) {
@@ -69,7 +83,7 @@ public class SolicitudFetcher {
             e.printStackTrace();
         }
     }
-    
+        
     private String getSolicitudDataString(Solicitud solicitud) {
         return String.format("%d|%s|%s|%s",
                 solicitud.getId(), solicitud.getTitulo(), solicitud.getEstado(), solicitud.getDNI());
