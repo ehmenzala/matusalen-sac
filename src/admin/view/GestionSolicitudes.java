@@ -110,7 +110,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         btnBuscar.addActionListener(listener);
     }
     
-    public void ProcesarSolicitud(ActionListener listener) {
+    public void procesarSolicitud(ActionListener listener) {
         btnProcesar.addActionListener(listener);
     }
     

@@ -26,7 +26,7 @@ public class AdminController implements ActionListener {
     private final AdminLogin vistaLogin;
     private final BookShelf bs;
     private final BookFetcher bf;
-    private final GestionSolicitudes PanelSolicitudes;
+    private final GestionSolicitudes panelSolicitudes;
     private final SolicitudFetcher sf;
 
     DefaultTableModel model = new DefaultTableModel();
@@ -41,7 +41,7 @@ public class AdminController implements ActionListener {
         this.bs = new BookShelf();
         this.bf = new BookFetcher();
         this.sf = new SolicitudFetcher();
-        this.PanelSolicitudes = new GestionSolicitudes();
+        this.panelSolicitudes = new GestionSolicitudes();
         setActionListeners();
     }
 
@@ -101,7 +101,7 @@ public class AdminController implements ActionListener {
                 model2.addColumn(columna);
             }
 
-            PanelSolicitudes.tblSolicitudes.setModel(model2);
+            panelSolicitudes.tblSolicitudes.setModel(model2);
         }
 
         ArrayList<Solicitud> solicitudes = sf.readAllSolicitudes();
@@ -117,7 +117,7 @@ public class AdminController implements ActionListener {
             model2.addRow(DatoSolis);
         }
 
-        PanelSolicitudes.tblSolicitudes.setModel(model2);
+        panelSolicitudes.tblSolicitudes.setModel(model2);
     }
 
     private boolean losCamposEstanCompletos() {
@@ -329,21 +329,21 @@ public class AdminController implements ActionListener {
 
         });
 
-        PanelSolicitudes.buscarPorID((e) -> {
-            String idInput = PanelSolicitudes.txtID.getText();
+        panelSolicitudes.buscarPorID((e) -> {
+            String idInput = panelSolicitudes.txtID.getText();
 
             int id = Integer.parseInt(idInput);
             String titulo = buscarTituloPorID(id);
 
             if (titulo != null) {
-                PanelSolicitudes.txtTitulo.setText(titulo);
+                panelSolicitudes.txtTitulo.setText(titulo);
             } else {
-                PanelSolicitudes.txtTitulo.setText("");
+                panelSolicitudes.txtTitulo.setText("");
             }
         });
 
-        PanelSolicitudes.ProcesarSolicitud((e) -> {
-            int idInput = Integer.parseInt(PanelSolicitudes.txtID.getText());
+        panelSolicitudes.procesarSolicitud((e) -> {
+            int idInput = Integer.parseInt(panelSolicitudes.txtID.getText());
             
             procesarSoli(idInput);
             
@@ -357,9 +357,9 @@ public class AdminController implements ActionListener {
     }
 
     public void iniciarSolicitudes() {
-        PanelSolicitudes.setTitle("SOLICITUDES");
-        PanelSolicitudes.setLocationRelativeTo(null);
-        PanelSolicitudes.setVisible(true);
+        panelSolicitudes.setTitle("SOLICITUDES");
+        panelSolicitudes.setLocationRelativeTo(null);
+        panelSolicitudes.setVisible(true);
     }
 
     public void iniciarLogin() {
