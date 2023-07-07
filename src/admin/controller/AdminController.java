@@ -15,6 +15,9 @@ import admin.view.GestionSolicitudes;
 import java.awt.event.ActionListener;
 import book.model.BookFetcher;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import presentation.Welcome;
@@ -24,13 +27,14 @@ public class AdminController implements ActionListener {
 
     private final AdminManagement adminManagement;
     private final AdminLogin vistaLogin;
+    private final GestionSolicitudes panelSolicitudes;
+
     private final BookShelf bs;
     private final BookFetcher bf;
-    private final GestionSolicitudes panelSolicitudes;
     private final SolicitudFetcher sf;
 
-    DefaultTableModel model = new DefaultTableModel();
-    DefaultTableModel model2 = new DefaultTableModel();
+    DefaultTableModel bookTblModel = new DefaultTableModel();
+    DefaultTableModel soliTblModel = new DefaultTableModel();
 
     public AdminController(AdminLogin vistaLogin,
             AdminManagement adminManagement) {
@@ -47,7 +51,7 @@ public class AdminController implements ActionListener {
 
     public void cargarLibros() {
 
-        if (model.getColumnCount() == 0) {
+        if (bookTblModel.getColumnCount() == 0) {
             ArrayList<Object> colum = new ArrayList<Object>();
             colum.add("ID");
             colum.add("Titulo");
@@ -60,10 +64,10 @@ public class AdminController implements ActionListener {
             colum.add("Rating");
 
             for (Object columna : colum) {
-                model.addColumn(columna);
+                bookTblModel.addColumn(columna);
             }
 
-            adminManagement.tblLibros.setModel(model);
+            adminManagement.tblLibros.setModel(bookTblModel);
         }
 
         ArrayList<Book> books = bf.readAllBooks();
@@ -81,43 +85,64 @@ public class AdminController implements ActionListener {
                 book.getRating()
             };
 
-            model.addRow(datos);
+            bookTblModel.addRow(datos);
         }
 
-        adminManagement.tblLibros.setModel(model);
+        adminManagement.tblLibros.setModel(bookTblModel);
     }
 
     public void cargarSolicitudes() {
-        
 
-        if (model2.getColumnCount() == 0) {
-            ArrayList<Object> colum = new ArrayList<Object>();
-            colum.add("ID");
-            colum.add("Titulo");
-            colum.add("Estado");
-            colum.add("DNI");
+        boolean tablaNoTieneColumnas = soliTblModel.getColumnCount() == 0;
 
-            for (Object columna : colum) {
-                model2.addColumn(columna);
-            }
-
-            panelSolicitudes.tblSolicitudes.setModel(model2);
+        if (tablaNoTieneColumnas) {
+            addTableHeaders();
         }
 
+        Queue<Solicitud> enEsperaQueue = new LinkedList<>();
+        Queue<Solicitud> procesadoQueue = new LinkedList<>();
+        
         ArrayList<Solicitud> solicitudes = sf.readAllSolicitudes();
 
         for (Solicitud solicitud : solicitudes) {
-            Object[] DatoSolis = new Object[]{
+            if (solicitud.getEstado().equals("En espera")) {
+                enEsperaQueue.add(solicitud);
+            } else if (solicitud.getEstado().equals("Procesado")) {
+                procesadoQueue.add(solicitud);
+            }
+        }
+        
+        for (Solicitud solicitud : enEsperaQueue) {
+            soliTblModel.addRow(new Object[]{
                 solicitud.getId(),
                 solicitud.getTitulo(),
                 solicitud.getEstado(),
                 solicitud.getDNI()
-            };
-
-            model2.addRow(DatoSolis);
+            });
+        }
+        
+        for (Solicitud solicitud : procesadoQueue) {
+            soliTblModel.addRow(new Object[]{
+                solicitud.getId(),
+                solicitud.getTitulo(),
+                solicitud.getEstado(),
+                solicitud.getDNI()
+            });
         }
 
-        panelSolicitudes.tblSolicitudes.setModel(model2);
+        panelSolicitudes.tblSolicitudes.setModel(soliTblModel);
+    }
+
+    private void addTableHeaders() {
+        ArrayList<Object> columns = new ArrayList<>(Arrays.asList(
+                "ID", "Titulo", "Estado", "DNI"
+        ));
+
+        for (Object column : columns) {
+            soliTblModel.addColumn(column);
+        }
+
+        panelSolicitudes.tblSolicitudes.setModel(soliTblModel);
     }
 
     private boolean losCamposEstanCompletos() {
@@ -223,7 +248,7 @@ public class AdminController implements ActionListener {
                         numPages, publishedDate,
                         language, ISBN, rating, fragment));
 
-                model.setRowCount(0);
+                bookTblModel.setRowCount(0);
                 cargarLibros();
             } else {
                 String errorMessage = "";
@@ -268,7 +293,7 @@ public class AdminController implements ActionListener {
 
                 int bookId = Integer.parseInt(adminManagement.getId());
                 bs.deleteBook(bookId);
-                model.setRowCount(0);
+                bookTblModel.setRowCount(0);
                 cargarLibros();
             });
 
@@ -296,7 +321,7 @@ public class AdminController implements ActionListener {
                         numPages, publishedDate,
                         language, ISBN, rating, fragment);
                 bs.addBook(bookToAdd);
-                model.setRowCount(0);
+                bookTblModel.setRowCount(0);
                 cargarLibros();
             } else {
                 String errorMessage = "";
@@ -344,9 +369,9 @@ public class AdminController implements ActionListener {
 
         panelSolicitudes.procesarSolicitud((e) -> {
             int idInput = Integer.parseInt(panelSolicitudes.txtID.getText());
-            
+
             procesarSoli(idInput);
-            
+
         });
     }
 
@@ -369,29 +394,29 @@ public class AdminController implements ActionListener {
     }
 
     private void procesarSoli(int id) {
-        
-        for (int i = 0; i < model2.getRowCount(); i++) {
-            int solicitudID = (int) model2.getValueAt(i, 0);
+
+        for (int i = 0; i < soliTblModel.getRowCount(); i++) {
+            int solicitudID = (int) soliTblModel.getValueAt(i, 0);
             if (solicitudID == id) {
-                
-                if (model2.getValueAt(i, 2).equals("Procesado")) {
+
+                if (soliTblModel.getValueAt(i, 2).equals("Procesado")) {
                     JOptionPane.showMessageDialog(null, "Esta solicitud ya está procesada");
                 } else {
                     JOptionPane.showMessageDialog(null, "Solicitud Procesada");
-                    Solicitud solis = new Solicitud(solicitudID, (String) (model2.getValueAt(i, 1)), "Procesado" , (String) model2.getValueAt(i, 3));
+                    Solicitud solis = new Solicitud(solicitudID, (String) (soliTblModel.getValueAt(i, 1)), "Procesado", (String) soliTblModel.getValueAt(i, 3));
                     sf.updateSolicitud(solis);
-                    model2.setRowCount(0);
+                    soliTblModel.setRowCount(0);
                     cargarSolicitudes();
-                }          
+                }
             }
         }
     }
 
     private String buscarTituloPorID(int id) {
-        for (int i = 0; i < model2.getRowCount(); i++) {
-            int solicitudID = (int) model2.getValueAt(i, 0);
+        for (int i = 0; i < soliTblModel.getRowCount(); i++) {
+            int solicitudID = (int) soliTblModel.getValueAt(i, 0);
             if (solicitudID == id) {
-                return (String) model2.getValueAt(i, 1);
+                return (String) soliTblModel.getValueAt(i, 1);
             }
         }
         return null;
