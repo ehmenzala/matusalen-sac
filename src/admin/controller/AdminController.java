@@ -394,7 +394,7 @@ public class AdminController implements ActionListener {
     }
 
     private void procesarSoli(int id) {
-
+        
         for (int i = 0; i < soliTblModel.getRowCount(); i++) {
             int solicitudID = (int) soliTblModel.getValueAt(i, 0);
             if (solicitudID == id) {
@@ -407,6 +407,7 @@ public class AdminController implements ActionListener {
                     sf.updateSolicitud(solis);
                     soliTblModel.setRowCount(0);
                     cargarSolicitudes();
+                    return;
                 }
             }
         }
