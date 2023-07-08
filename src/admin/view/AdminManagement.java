@@ -51,6 +51,7 @@ public class AdminManagement extends javax.swing.JFrame {
         tblLibros = new javax.swing.JTable();
         lblFondo3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        btnRegresar = new javax.swing.JButton();
         lblFondoFrag = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtareaFragmento = new javax.swing.JTextArea();
@@ -239,6 +240,12 @@ public class AdminManagement extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fragmento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 0));
+        btnRegresar.setText("Regresar");
+        jPanel4.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, -1, -1));
         jPanel4.add(lblFondoFrag, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 17, 604, 296));
 
         txtareaFragmento.setBackground(new java.awt.Color(36, 35, 35));
@@ -389,7 +396,11 @@ public class AdminManagement extends javax.swing.JFrame {
     public void onSearchByIdClick(ActionListener listener) {
         btnBuscarId.addActionListener(listener);
     }
-
+    
+    public void regresar(ActionListener listener) {
+        btnRegresar.addActionListener(listener);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -428,6 +439,7 @@ public class AdminManagement extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

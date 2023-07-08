@@ -28,7 +28,7 @@ public class AdminController implements ActionListener {
     private final AdminManagement adminManagement;
     private final AdminLogin vistaLogin;
     private final GestionSolicitudes panelSolicitudes;
-
+    private final AdminWelcome aw;
     private final BookShelf bs;
     private final BookFetcher bf;
     private final SolicitudFetcher sf;
@@ -42,6 +42,7 @@ public class AdminController implements ActionListener {
         this.adminManagement = adminManagement;
         this.vistaLogin.btnIngresar.addActionListener(this);
         this.vistaLogin.btnRegresar.addActionListener(this);
+        this.aw = new AdminWelcome();
         this.bs = new BookShelf();
         this.bf = new BookFetcher();
         this.sf = new SolicitudFetcher();
@@ -101,7 +102,7 @@ public class AdminController implements ActionListener {
 
         Queue<Solicitud> enEsperaQueue = new LinkedList<>();
         Queue<Solicitud> procesadoQueue = new LinkedList<>();
-        
+
         ArrayList<Solicitud> solicitudes = sf.readAllSolicitudes();
 
         for (Solicitud solicitud : solicitudes) {
@@ -111,7 +112,7 @@ public class AdminController implements ActionListener {
                 procesadoQueue.add(solicitud);
             }
         }
-        
+
         for (Solicitud solicitud : enEsperaQueue) {
             soliTblModel.addRow(new Object[]{
                 solicitud.getId(),
@@ -120,7 +121,7 @@ public class AdminController implements ActionListener {
                 solicitud.getDNI()
             });
         }
-        
+
         for (Solicitud solicitud : procesadoQueue) {
             soliTblModel.addRow(new Object[]{
                 solicitud.getId(),
@@ -373,6 +374,22 @@ public class AdminController implements ActionListener {
             procesarSoli(idInput);
 
         });
+
+        panelSolicitudes.recargarSoli((e) -> {
+            soliTblModel.setRowCount(0);
+            cargarSolicitudes();
+        });
+        
+        adminManagement.regresar((e) -> {
+            iniciarLogin();
+            adminManagement.setVisible(false);
+        });
+
+        panelSolicitudes.regresar((e) -> {
+            iniciarLogin();
+            panelSolicitudes.setVisible(false);
+        });
+
     }
 
     public void iniciarAdminManagement() {
@@ -394,7 +411,7 @@ public class AdminController implements ActionListener {
     }
 
     private void procesarSoli(int id) {
-        
+
         for (int i = 0; i < soliTblModel.getRowCount(); i++) {
             int solicitudID = (int) soliTblModel.getValueAt(i, 0);
             if (solicitudID == id) {
