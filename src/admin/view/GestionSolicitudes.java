@@ -1,7 +1,6 @@
 package admin.view;
 
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import utilities.MetodoGeneral;
 
 public class GestionSolicitudes extends javax.swing.JFrame {
@@ -10,7 +9,6 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/Pluma_moderna.jpg");
-//        MetodoGeneral.colocarImagen(lblRecargar, "./src/images/recargas.png");
     }
 
     @SuppressWarnings("unchecked")
@@ -141,10 +139,8 @@ public class GestionSolicitudes extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GestionSolicitudes().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new GestionSolicitudes().setVisible(true);
         });
     }
 
