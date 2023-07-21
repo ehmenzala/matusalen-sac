@@ -4,15 +4,16 @@ import utilities.MetodoGeneral;
 import book.model.Book;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class RequestDetails extends javax.swing.JFrame {
 
     public RequestDetails(Book book) {
         initComponents();
         setLocationRelativeTo(null);
-        
+
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/man-critico-book.jpg");
-        
+
         // El libro ahora se pasa por parámetro en el constructor (book)
         lblCtitulo.setText(book.getTitle());
         lblCautor.setText(book.getAuthor());
@@ -27,7 +28,7 @@ public class RequestDetails extends javax.swing.JFrame {
     public RequestDetails(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
     public void onRegistrarClick(ActionListener listener) {
         btnRegistrarDni.addActionListener(listener);
     }
@@ -69,6 +70,11 @@ public class RequestDetails extends javax.swing.JFrame {
         txtDni.setBackground(new java.awt.Color(36, 35, 35));
         txtDni.setForeground(new java.awt.Color(255, 255, 255));
         txtDni.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 1, 14), new java.awt.Color(255, 255, 0))); // NOI18N
+        txtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, 60));
 
         lblDetalles.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -199,6 +205,10 @@ public class RequestDetails extends javax.swing.JFrame {
     private void btnRegistrarDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarDniActionPerformed
 
     }//GEN-LAST:event_btnRegistrarDniActionPerformed
+
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarDni;

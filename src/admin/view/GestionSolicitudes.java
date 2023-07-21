@@ -1,17 +1,18 @@
 package admin.view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import utilities.MetodoGeneral;
 
 public class GestionSolicitudes extends javax.swing.JFrame {
-   
+
     public GestionSolicitudes() {
         initComponents();
         setLocationRelativeTo(null);
         MetodoGeneral.colocarImagen(lblFondo, "./src/images/Pluma_moderna.jpg");
 //        MetodoGeneral.colocarImagen(lblRecargar, "./src/images/recargas.png");
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,7 +41,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         lblSolidelibros.setFont(new java.awt.Font("Segoe UI Emoji", 3, 18)); // NOI18N
         lblSolidelibros.setForeground(new java.awt.Color(255, 255, 0));
         lblSolidelibros.setText("Solicitud De Libros");
-        jPanel1.add(lblSolidelibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        jPanel1.add(lblSolidelibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         txtID.setBackground(new java.awt.Color(0, 0, 0));
         txtID.setForeground(new java.awt.Color(255, 255, 51));
@@ -55,7 +56,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
                 txtTituloActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 140, 60));
+        jPanel1.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 140, 60));
 
         btnRecargar.setBackground(new java.awt.Color(0, 0, 0));
         btnRecargar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -67,7 +68,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 0));
         btnRegresar.setText("Regresar");
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
 
         btnBuscar.setBackground(new java.awt.Color(0, 0, 0));
         btnBuscar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
@@ -117,8 +118,7 @@ public class GestionSolicitudes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTituloActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
+     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
 
@@ -127,19 +127,19 @@ public class GestionSolicitudes extends javax.swing.JFrame {
     public void buscarPorID(ActionListener listener) {
         btnBuscar.addActionListener(listener);
     }
-    
+
     public void recargarSoli(ActionListener listener) {
         btnRecargar.addActionListener(listener);
     }
-    
+
     public void regresar(ActionListener listener) {
         btnRegresar.addActionListener(listener);
     }
-    
+
     public void procesarSolicitud(ActionListener listener) {
         btnProcesar.addActionListener(listener);
     }
-    
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SolicitudFetcher {
-    
+
     private final String FILE_PATH = "./src/db/solicitudes.psv";
-    
+
     public int createNewId() {
         int maxNumber = 0;
         try {
@@ -33,7 +33,7 @@ public class SolicitudFetcher {
             return 0;
         }
     }
-    
+
     public void createSolicitud(Solicitud solicitud) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH, true))) {
             String solicitudData = getSolicitudDataString(solicitud);
@@ -42,7 +42,7 @@ public class SolicitudFetcher {
             e.printStackTrace();
         }
     }
-    
+
     public ArrayList<Solicitud> readAllSolicitudes() {
         ArrayList<Solicitud> solicitudes = new ArrayList<>();
 
@@ -58,7 +58,7 @@ public class SolicitudFetcher {
 
         return solicitudes;
     }
-    
+
     public void updateSolicitud(Solicitud updatedSolicitud) {
         List<Solicitud> solicitudes = readAllSolicitudes();
 
@@ -72,7 +72,7 @@ public class SolicitudFetcher {
 
         saveAllSolicitudes(solicitudes);
     }
-    
+
     private void saveAllSolicitudes(List<Solicitud> solicitudes) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH))) {
             for (Solicitud solicitud : solicitudes) {
@@ -83,12 +83,12 @@ public class SolicitudFetcher {
             e.printStackTrace();
         }
     }
-        
+
     private String getSolicitudDataString(Solicitud solicitud) {
         return String.format("%d|%s|%s|%s",
                 solicitud.getId(), solicitud.getTitulo(), solicitud.getEstado(), solicitud.getDNI());
     }
-    
+
     private Solicitud parseSolicitudData(String solicitudData) {
         String[] parts = solicitudData.split("\\|");
         int id = Integer.parseInt(parts[0]);
@@ -98,6 +98,15 @@ public class SolicitudFetcher {
 
         return new Solicitud(id, titulo, estado, dni);
     }
-    
-    
+
+    public boolean existeSolicitudPorID(int id) {
+        List<Solicitud> solicitudes = readAllSolicitudes();
+        for (Solicitud solicitud : solicitudes) {
+            if (solicitud.getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -53,18 +53,28 @@ public class BookResultPanel extends JPanel {
         bookDetail.onSolicitarClick((e) -> {
             regisSoli.setVisible(true);
             bookDetail.setVisible(false);
-            
+
         });
-        
-        // Setup request details view
+
+        // "Configurar la vista de detalles de la solicitud"
         regisSoli.onRegistrarClick((e) -> {
+            String dniStr = regisSoli.txtDni.getText().trim();
+            if (!dniStr.matches("\\d+")) {
+                JOptionPane.showMessageDialog(null, "El DNI debe contener solo dígitos numéricos", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int dni = Integer.parseInt(dniStr);
+            if (String.valueOf(dni).length() != 8) {
+                JOptionPane.showMessageDialog(null, "El DNI debe tener exactamente 8 dígitos", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             SolicitudFetcher sf = new SolicitudFetcher();
-            Solicitud solicitud = new Solicitud(sf.createNewId(), book.getTitle(), "En espera", regisSoli.txtDni.getText());
+            Solicitud solicitud = new Solicitud(sf.createNewId(), book.getTitle(), "En espera", String.valueOf(dni));
             sf.createSolicitud(solicitud);
-            JOptionPane.showMessageDialog(null, "SOLICITUD REGISTRADA CON EXITO");
+            JOptionPane.showMessageDialog(null, "SOLICITUD REGISTRADA CON ÉXITO");
             regisSoli.setVisible(false);
         });
-        
+
         // Open book detail when button clicked
         resultBtn.addActionListener((e) -> bookDetail.setVisible(true));
 

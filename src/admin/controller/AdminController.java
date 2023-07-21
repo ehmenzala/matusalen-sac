@@ -356,10 +356,40 @@ public class AdminController implements ActionListener {
         });
 
         panelSolicitudes.buscarPorID((e) -> {
-            String idInput = panelSolicitudes.txtID.getText();
+            String idInputStr = panelSolicitudes.txtID.getText().trim();
 
-            int id = Integer.parseInt(idInput);
-            String titulo = buscarTituloPorID(id);
+            if (idInputStr.isEmpty()) {
+                JOptionPane.showMessageDialog(null,
+                        "Ingrese un valor en el campo ID",
+                        "Error: ID vacío",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            if (!idInputStr.matches("\\d+")) {
+                JOptionPane.showMessageDialog(null,
+                        "Ingrese un valor numérico válido en el campo ID",
+                        "Error: ID no numérico",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            int idInput = Integer.parseInt(idInputStr);
+
+            SolicitudFetcher sf = new SolicitudFetcher();
+            boolean existeID = sf.existeSolicitudPorID(idInput);
+
+            if (!existeID) {
+                JOptionPane.showMessageDialog(null,
+                        "El ID no está registrado en la base de datos",
+                        "Error: ID no encontrado",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+            String titulo = buscarTituloPorID(idInput);
 
             if (titulo != null) {
                 panelSolicitudes.txtTitulo.setText(titulo);
@@ -369,17 +399,48 @@ public class AdminController implements ActionListener {
         });
 
         panelSolicitudes.procesarSolicitud((e) -> {
-            int idInput = Integer.parseInt(panelSolicitudes.txtID.getText());
+            String idInputStr = panelSolicitudes.txtID.getText().trim();
+
+            if (idInputStr.isEmpty()) {
+                JOptionPane.showMessageDialog(null,
+                        "Ingrese un valor en el campo ID",
+                        "Error: ID vacío",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            if (!idInputStr.matches("\\d+")) {
+                JOptionPane.showMessageDialog(null,
+                        "Ingrese un valor numérico válido en el campo ID",
+                        "Error: ID no numérico",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            int idInput = Integer.parseInt(idInputStr);
+
+            SolicitudFetcher sf = new SolicitudFetcher();
+            boolean existeID = sf.existeSolicitudPorID(idInput);
+
+            if (!existeID) {
+                JOptionPane.showMessageDialog(null,
+                        "El ID no está registrado en la base de datos",
+                        "Error: ID no encontrado",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
 
             procesarSoli(idInput);
-
         });
 
         panelSolicitudes.recargarSoli((e) -> {
             soliTblModel.setRowCount(0);
             cargarSolicitudes();
         });
-        
+
         adminManagement.regresar((e) -> {
             iniciarLogin();
             adminManagement.setVisible(false);
